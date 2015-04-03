@@ -8,6 +8,13 @@
 
 #import "RBChatTimeFormateTool.h"
 
+@interface RBChatTimeFormateTool ()
+
++ (NSString*)getMessageDateString:(NSDate*)messageDate andNeedTime:(BOOL)needTime;
++(NSString *)getWeekdayWithNumber:(NSInteger)number;
+
+@end
+
 @implementation RBChatTimeFormateTool
 
 
@@ -26,11 +33,9 @@
     
     NSCalendar *cal = [NSCalendar currentCalendar];
     NSDateComponents *components = [cal components:NSCalendarUnitEra|NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitWeekday fromDate:messageDate];
-//    NSDateComponents *components = [cal component:NSCalendarUnitEra fromDate:messageDate];
     NSDate *msgDate = [cal dateFromComponents:components];
     
     NSString *weekday = [RBChatTimeFormateTool getWeekdayWithNumber:components.weekday];
-    
     components = [cal components:NSCalendarUnitEra|NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitWeekday fromDate:[NSDate date]];
     NSDate *today = [cal dateFromComponents:components];
     
@@ -115,5 +120,45 @@
 }
 
 
+//苹果官方不推荐使用week
+//NSLog(@"week(该年第几周):%i", dateComponents.week);
+//NSLog(@"weekOfYear(该年第几周):%i", dateComponents.weekOfYear);
+//NSLog(@"weekOfMonth(该月第几周):%i", dateComponents.weekOfMonth);
++ (NSString *)stringFrom1970TimeInterval:(NSString *)timeInterval
+{
+    long long time = [timeInterval longLongValue];
+    NSDate *timeDate = [NSDate dateWithTimeIntervalSince1970:time];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay |
+                                                         NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond |
+                                                         NSCalendarUnitWeekday)
+                                               fromDate:timeDate
+                                                 toDate:[NSDate date]
+                                                options:0];
+    if ([components year] != 0) {
+        return [NSString stringWithFormat:@"%ld年前", (long)[components year]];
+    }
+    else if ([components month] != 0) {
+        return [NSString stringWithFormat:@"%ld个月前", (long)[components month]];
+    }
+    else if ([components weekOfMonth] != 0) {
+        return [NSString stringWithFormat:@"%ld周前", (long)[components weekOfMonth]];
+    }
+    else if ([components day] != 0) {
+        return [NSString stringWithFormat:@"%ld天前", (long)[components day]];
+    }
+    else if ([components hour] != 0) {
+        return [NSString stringWithFormat:@"%ld小时前", (long)[components hour]];
+    }
+    else if ([components minute] != 0) {
+        return [NSString stringWithFormat:@"%ld分钟前", (long)[components minute]];
+    }
+    else {
+        return @"刚刚";
+    }
+    
+    return nil;
+}
 
 @end
