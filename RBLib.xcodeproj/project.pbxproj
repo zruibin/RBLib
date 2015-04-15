@@ -19,6 +19,7 @@
 		2CBE2C871ACBD3B10036FEF2 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2CBE2C851ACBD3B10036FEF2 /* Podfile */; };
 		2CBE2C881ACBD3B10036FEF2 /* RBLib.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 2CBE2C861ACBD3B10036FEF2 /* RBLib.podspec */; };
 		2CBE2C8D1ACBDB990036FEF2 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE2C8C1ACBDB990036FEF2 /* UncaughtExceptionHandler.m */; };
+		2CD693131ADE516D003C5927 /* APRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD693121ADE516D003C5927 /* APRoundButton.m */; };
 		2CE8E3C01ADD140C00C30B24 /* UIImage+CircleRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE8E3BF1ADD140C00C30B24 /* UIImage+CircleRadius.m */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,8 @@
 		2CBE2C8A1ACBD63E0036FEF2 /* RBMarco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBMarco.h; sourceTree = "<group>"; };
 		2CBE2C8B1ACBDB990036FEF2 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		2CBE2C8C1ACBDB990036FEF2 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		2CD693111ADE516D003C5927 /* APRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APRoundButton.h; sourceTree = "<group>"; };
+		2CD693121ADE516D003C5927 /* APRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APRoundButton.m; sourceTree = "<group>"; };
 		2CE8E3BE1ADD140C00C30B24 /* UIImage+CircleRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CircleRadius.h"; sourceTree = "<group>"; };
 		2CE8E3BF1ADD140C00C30B24 /* UIImage+CircleRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CircleRadius.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +154,8 @@
 		2CBE2C891ACBD54E0036FEF2 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				2CD693111ADE516D003C5927 /* APRoundButton.h */,
+				2CD693121ADE516D003C5927 /* APRoundButton.m */,
 				2CE8E3BE1ADD140C00C30B24 /* UIImage+CircleRadius.h */,
 				2CE8E3BF1ADD140C00C30B24 /* UIImage+CircleRadius.m */,
 				2C39751A1ACF8B11000B01D7 /* RBSegmentedControl */,
@@ -272,6 +277,7 @@
 				2C37FC421ACBFC3B0010EFBF /* RBChatTimeFormateTool.m in Sources */,
 				2C39751D1ACF8B11000B01D7 /* RBSegmentedControl.m in Sources */,
 				2CBE2C621ACBD3000036FEF2 /* main.m in Sources */,
+				2CD693131ADE516D003C5927 /* APRoundButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
