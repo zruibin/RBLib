@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C37FC421ACBFC3B0010EFBF /* RBChatTimeFormateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C37FC411ACBFC3B0010EFBF /* RBChatTimeFormateTool.m */; };
+		2C39751D1ACF8B11000B01D7 /* RBSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C39751C1ACF8B11000B01D7 /* RBSegmentedControl.m */; };
 		2CBE2C621ACBD3000036FEF2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE2C611ACBD3000036FEF2 /* main.m */; };
 		2CBE2C651ACBD3000036FEF2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE2C641ACBD3000036FEF2 /* AppDelegate.m */; };
 		2CBE2C681ACBD3000036FEF2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE2C671ACBD3000036FEF2 /* ViewController.m */; };
@@ -18,6 +19,7 @@
 		2CBE2C871ACBD3B10036FEF2 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2CBE2C851ACBD3B10036FEF2 /* Podfile */; };
 		2CBE2C881ACBD3B10036FEF2 /* RBLib.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 2CBE2C861ACBD3B10036FEF2 /* RBLib.podspec */; };
 		2CBE2C8D1ACBDB990036FEF2 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE2C8C1ACBDB990036FEF2 /* UncaughtExceptionHandler.m */; };
+		2CE8E3C01ADD140C00C30B24 /* UIImage+CircleRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE8E3BF1ADD140C00C30B24 /* UIImage+CircleRadius.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		2C37FC401ACBFC3B0010EFBF /* RBChatTimeFormateTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBChatTimeFormateTool.h; sourceTree = "<group>"; };
 		2C37FC411ACBFC3B0010EFBF /* RBChatTimeFormateTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBChatTimeFormateTool.m; sourceTree = "<group>"; };
+		2C39751B1ACF8B11000B01D7 /* RBSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBSegmentedControl.h; sourceTree = "<group>"; };
+		2C39751C1ACF8B11000B01D7 /* RBSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBSegmentedControl.m; sourceTree = "<group>"; };
 		2CBE2C5C1ACBD3000036FEF2 /* RBLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RBLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBE2C601ACBD3000036FEF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CBE2C611ACBD3000036FEF2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 		2CBE2C8A1ACBD63E0036FEF2 /* RBMarco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBMarco.h; sourceTree = "<group>"; };
 		2CBE2C8B1ACBDB990036FEF2 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		2CBE2C8C1ACBDB990036FEF2 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		2CE8E3BE1ADD140C00C30B24 /* UIImage+CircleRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CircleRadius.h"; sourceTree = "<group>"; };
+		2CE8E3BF1ADD140C00C30B24 /* UIImage+CircleRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CircleRadius.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C39751A1ACF8B11000B01D7 /* RBSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				2C39751B1ACF8B11000B01D7 /* RBSegmentedControl.h */,
+				2C39751C1ACF8B11000B01D7 /* RBSegmentedControl.m */,
+			);
+			path = RBSegmentedControl;
+			sourceTree = "<group>";
+		};
 		2CBE2C531ACBD2FF0036FEF2 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +151,9 @@
 		2CBE2C891ACBD54E0036FEF2 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				2CE8E3BE1ADD140C00C30B24 /* UIImage+CircleRadius.h */,
+				2CE8E3BF1ADD140C00C30B24 /* UIImage+CircleRadius.m */,
+				2C39751A1ACF8B11000B01D7 /* RBSegmentedControl */,
 				2CBE2C8A1ACBD63E0036FEF2 /* RBMarco.h */,
 				2CBE2C8B1ACBDB990036FEF2 /* UncaughtExceptionHandler.h */,
 				2CBE2C8C1ACBDB990036FEF2 /* UncaughtExceptionHandler.m */,
@@ -248,9 +266,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CBE2C681ACBD3000036FEF2 /* ViewController.m in Sources */,
+				2CE8E3C01ADD140C00C30B24 /* UIImage+CircleRadius.m in Sources */,
 				2CBE2C8D1ACBDB990036FEF2 /* UncaughtExceptionHandler.m in Sources */,
 				2CBE2C651ACBD3000036FEF2 /* AppDelegate.m in Sources */,
 				2C37FC421ACBFC3B0010EFBF /* RBChatTimeFormateTool.m in Sources */,
+				2C39751D1ACF8B11000B01D7 /* RBSegmentedControl.m in Sources */,
 				2CBE2C621ACBD3000036FEF2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
