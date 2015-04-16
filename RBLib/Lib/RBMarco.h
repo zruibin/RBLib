@@ -12,22 +12,43 @@
 #define _DEBUG 1
 #ifdef	_DEBUG
 
-//#define RBLog(...);	NSLog(__VA_ARGS__);
-#define	RBLog(FORMAT, ...) fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
-#define RBLogMethod()	NSLog(@"[%s] %@", class_getName([self class]), NSStringFromSelector(_cmd));
-#define RBLogPoint(point)  NSLog(@"%f,%f", point.x, point.y);
-#define RBLogSize(size)   NSLog(@"%f,%f", size.width, size.height);
-#define RBLogRect(rect)   NSLog(@"%f,%f %f,%f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+//#define DLog(...);	NSLog(__VA_ARGS__);
+#define	DLog(FORMAT, ...) fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#define DLogMethod()	 NSLog(@"[%s] %@", class_getName([self class]), NSStringFromSelector(_cmd));
+#define DLogPoint(point) NSLog(@"%f,%f", point.x, point.y);
+#define DLogSize(size)   NSLog(@"%f,%f", size.width, size.height);
+#define DLogRect(rect)   NSLog(@"%f,%f %f,%f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
 
 #else
 
-#define RBLog(...);
-#define RBLogMethod()
-#define RBLogPoint(point)
-#define RBLogSize(size)
-#define RBLogRect(rect)
+#define DLog(...);
+#define DLogMethod()
+#define DLogPoint(point)
+#define DLogSize(size)
+#define DLogRect(rect)
 
 #endif
+
+#pragma mark ---objc_arc
+
+#if __has_feature(objc_arc)
+#define __AUTORELEASE(x)   (x)
+#define __RELEASE(x)       (x) = nil;
+#define __RETAIN(x)        (x)
+#define __SUPER_DEALLOC    ;
+#else
+#define __RETAIN(x)      [(x) retain];
+#define __AUTORELEASE(x) [(x) autorelease];
+
+#define __RELEASE(x) \
+if(nil != (x)) \
+{\
+[(x) release];\
+(x) = nil;\
+}
+#define __SUPER_DEALLOC    [super dealloc];
+#endif
+
 
 #pragma mark ---log  flag
 
@@ -68,8 +89,10 @@
 
 
 #pragma mark ---- color functions
+
 #define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
 #define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+
 #define HEXCOLORRGB(hexValue) [UIColor colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0 green:((float)((hexValue & 0xFF00) >> 8))/255.0 blue:((float)(hexValue & 0xFF))/255.0 alpha:1.0]
 #define HEXCOLORRGBA(hexValue,a) [UIColor colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0 green:((float)((hexValue & 0xFF00) >> 8))/255.0 blue:((float)(hexValue & 0xFF))/255.0 alpha:(a)]
 

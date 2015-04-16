@@ -1,0 +1,19 @@
+PODS:
+  - SDWebImage (3.7.2):
+    - SDWebImage/Core (= 3.7.2)
+  - SDWebImage/Core (3.7.2)
+  - UIActivityIndicator-for-SDWebImage (1.2):
+    - SDWebImage (~> 3.7)
+  - UIDevice-SupportedDevices (1.0.3)
+
+DEPENDENCIES:
+  - SDWebImage (~> 3.7)
+  - UIActivityIndicator-for-SDWebImage
+  - UIDevice-SupportedDevices
+
+SPEC CHECKSUMS:
+  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+  UIActivityIndicator-for-SDWebImage: 7bf7ebbf0ed1747dedc0d6e949c4603a6d0f9e0c
+  UIDevice-SupportedDevices: 385fc64737c0caa8cf6380c31f3b2230bba58a2c
+
+COCOAPODS: 0.36.1
