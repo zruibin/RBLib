@@ -20,6 +20,9 @@
 		2CBE2C881ACBD3B10036FEF2 /* RBLib.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 2CBE2C861ACBD3B10036FEF2 /* RBLib.podspec */; };
 		2CBE2C8D1ACBDB990036FEF2 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE2C8C1ACBDB990036FEF2 /* UncaughtExceptionHandler.m */; };
 		2CD693131ADE516D003C5927 /* APRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD693121ADE516D003C5927 /* APRoundButton.m */; };
+		2CE8824A1ADFA83500069D13 /* SDBrowserImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE882441ADFA83500069D13 /* SDBrowserImageView.m */; };
+		2CE8824B1ADFA83500069D13 /* SDPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE882461ADFA83500069D13 /* SDPhotoBrowser.m */; };
+		2CE8824C1ADFA83500069D13 /* SDWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE882491ADFA83500069D13 /* SDWaitingView.m */; };
 		2CE8E3C01ADD140C00C30B24 /* UIImage+CircleRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE8E3BF1ADD140C00C30B24 /* UIImage+CircleRadius.m */; };
 		E9FF1B3C26FC9E49C0BC6FD5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 722091F74D5DD9D641EC4AA3 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -59,6 +62,13 @@
 		2CBE2C8C1ACBDB990036FEF2 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		2CD693111ADE516D003C5927 /* APRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APRoundButton.h; sourceTree = "<group>"; };
 		2CD693121ADE516D003C5927 /* APRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APRoundButton.m; sourceTree = "<group>"; };
+		2CE882431ADFA83500069D13 /* SDBrowserImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDBrowserImageView.h; sourceTree = "<group>"; };
+		2CE882441ADFA83500069D13 /* SDBrowserImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDBrowserImageView.m; sourceTree = "<group>"; };
+		2CE882451ADFA83500069D13 /* SDPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoBrowser.h; sourceTree = "<group>"; };
+		2CE882461ADFA83500069D13 /* SDPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDPhotoBrowser.m; sourceTree = "<group>"; };
+		2CE882471ADFA83500069D13 /* SDPhotoBrowserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDPhotoBrowserConfig.h; sourceTree = "<group>"; };
+		2CE882481ADFA83500069D13 /* SDWaitingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWaitingView.h; sourceTree = "<group>"; };
+		2CE882491ADFA83500069D13 /* SDWaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWaitingView.m; sourceTree = "<group>"; };
 		2CE8E3BE1ADD140C00C30B24 /* UIImage+CircleRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CircleRadius.h"; sourceTree = "<group>"; };
 		2CE8E3BF1ADD140C00C30B24 /* UIImage+CircleRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CircleRadius.m"; sourceTree = "<group>"; };
 		664228D96C57C7F31603BC6D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +184,7 @@
 				2CD693121ADE516D003C5927 /* APRoundButton.m */,
 				2CE8E3BE1ADD140C00C30B24 /* UIImage+CircleRadius.h */,
 				2CE8E3BF1ADD140C00C30B24 /* UIImage+CircleRadius.m */,
+				2CE882421ADFA83500069D13 /* SDPhotoBrowser */,
 				2C39751A1ACF8B11000B01D7 /* RBSegmentedControl */,
 				2CBE2C8A1ACBD63E0036FEF2 /* RBMarco.h */,
 				2CBE2C8B1ACBDB990036FEF2 /* UncaughtExceptionHandler.h */,
@@ -182,6 +193,20 @@
 				2C37FC411ACBFC3B0010EFBF /* RBChatTimeFormateTool.m */,
 			);
 			path = Lib;
+			sourceTree = "<group>";
+		};
+		2CE882421ADFA83500069D13 /* SDPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				2CE882431ADFA83500069D13 /* SDBrowserImageView.h */,
+				2CE882441ADFA83500069D13 /* SDBrowserImageView.m */,
+				2CE882451ADFA83500069D13 /* SDPhotoBrowser.h */,
+				2CE882461ADFA83500069D13 /* SDPhotoBrowser.m */,
+				2CE882471ADFA83500069D13 /* SDPhotoBrowserConfig.h */,
+				2CE882481ADFA83500069D13 /* SDWaitingView.h */,
+				2CE882491ADFA83500069D13 /* SDWaitingView.m */,
+			);
+			path = SDPhotoBrowser;
 			sourceTree = "<group>";
 		};
 		6C813DD4121C775F6518B192 /* Frameworks */ = {
@@ -329,12 +354,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CE8824B1ADFA83500069D13 /* SDPhotoBrowser.m in Sources */,
 				2CBE2C681ACBD3000036FEF2 /* ViewController.m in Sources */,
 				2CE8E3C01ADD140C00C30B24 /* UIImage+CircleRadius.m in Sources */,
 				2CBE2C8D1ACBDB990036FEF2 /* UncaughtExceptionHandler.m in Sources */,
 				2CBE2C651ACBD3000036FEF2 /* AppDelegate.m in Sources */,
 				2C37FC421ACBFC3B0010EFBF /* RBChatTimeFormateTool.m in Sources */,
 				2C39751D1ACF8B11000B01D7 /* RBSegmentedControl.m in Sources */,
+				2CE8824A1ADFA83500069D13 /* SDBrowserImageView.m in Sources */,
+				2CE8824C1ADFA83500069D13 /* SDWaitingView.m in Sources */,
 				2CBE2C621ACBD3000036FEF2 /* main.m in Sources */,
 				2CD693131ADE516D003C5927 /* APRoundButton.m in Sources */,
 			);

@@ -8,8 +8,8 @@
 
 #import "ViewController.h"
 #import "RBMarco.h"
-
 #import "RBChatTimeFormateTool.h"
+#import "SDBrowserImageView.h"
 
 @interface ViewController ()
 
@@ -20,15 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    RBLog(@"RBLog...");
-    RBLogMethod();
+    DLog(@"RBLog...");
+    DLogMethod();
     
     NSTimeInterval time1970 = [[NSDate date] timeIntervalSince1970];
     NSTimeInterval timeNow  = [[NSDate date] timeIntervalSinceNow];
     NSString *time1970Str = [RBChatTimeFormateTool getMessageDateStringFromTimeInterval:time1970 andNeedTime:YES];
     NSString *timeNowStr  = [RBChatTimeFormateTool getMessageDateStringFromTimeInterval:timeNow andNeedTime:YES];
-    RBLog(@"time1970:%@", time1970Str);
-    RBLog(@"timeNow:%@", timeNowStr);
+    DLog(@"time1970:%@", time1970Str);
+    DLog(@"timeNow:%@", timeNowStr);
     
 }
 
