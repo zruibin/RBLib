@@ -24,6 +24,8 @@
 		2CE8824B1ADFA83500069D13 /* SDPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE882461ADFA83500069D13 /* SDPhotoBrowser.m */; };
 		2CE8824C1ADFA83500069D13 /* SDWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE882491ADFA83500069D13 /* SDWaitingView.m */; };
 		2CE8E3C01ADD140C00C30B24 /* UIImage+CircleRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE8E3BF1ADD140C00C30B24 /* UIImage+CircleRadius.m */; };
+		2CF3E8511AE63DA600FE1CC5 /* UINavigationBar+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3E8501AE63DA600FE1CC5 /* UINavigationBar+Gradient.m */; };
+		2CF3E8541AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3E8531AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m */; };
 		E9FF1B3C26FC9E49C0BC6FD5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 722091F74D5DD9D641EC4AA3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,10 @@
 		2CE882491ADFA83500069D13 /* SDWaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWaitingView.m; sourceTree = "<group>"; };
 		2CE8E3BE1ADD140C00C30B24 /* UIImage+CircleRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CircleRadius.h"; sourceTree = "<group>"; };
 		2CE8E3BF1ADD140C00C30B24 /* UIImage+CircleRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CircleRadius.m"; sourceTree = "<group>"; };
+		2CF3E84F1AE63DA600FE1CC5 /* UINavigationBar+Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Gradient.h"; sourceTree = "<group>"; };
+		2CF3E8501AE63DA600FE1CC5 /* UINavigationBar+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Gradient.m"; sourceTree = "<group>"; };
+		2CF3E8521AE63DEE00FE1CC5 /* ScrollHiddenBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollHiddenBarVC.h; sourceTree = "<group>"; };
+		2CF3E8531AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollHiddenBarVC.m; sourceTree = "<group>"; };
 		664228D96C57C7F31603BC6D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		722091F74D5DD9D641EC4AA3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B03E503867321FF2118BEA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				2CBE2C891ACBD54E0036FEF2 /* Lib */,
+				2CF3E8521AE63DEE00FE1CC5 /* ScrollHiddenBarVC.h */,
+				2CF3E8531AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m */,
 				2CBE2C6C1ACBD3000036FEF2 /* Images.xcassets */,
 				2CBE2C631ACBD3000036FEF2 /* AppDelegate.h */,
 				2CBE2C641ACBD3000036FEF2 /* AppDelegate.m */,
@@ -180,6 +188,7 @@
 		2CBE2C891ACBD54E0036FEF2 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				2CF3E84E1AE63DA500FE1CC5 /* UINavigationBar+Gradient */,
 				2CD693111ADE516D003C5927 /* APRoundButton.h */,
 				2CD693121ADE516D003C5927 /* APRoundButton.m */,
 				2CE8E3BE1ADD140C00C30B24 /* UIImage+CircleRadius.h */,
@@ -207,6 +216,15 @@
 				2CE882491ADFA83500069D13 /* SDWaitingView.m */,
 			);
 			path = SDPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		2CF3E84E1AE63DA500FE1CC5 /* UINavigationBar+Gradient */ = {
+			isa = PBXGroup;
+			children = (
+				2CF3E84F1AE63DA600FE1CC5 /* UINavigationBar+Gradient.h */,
+				2CF3E8501AE63DA600FE1CC5 /* UINavigationBar+Gradient.m */,
+			);
+			path = "UINavigationBar+Gradient";
 			sourceTree = "<group>";
 		};
 		6C813DD4121C775F6518B192 /* Frameworks */ = {
@@ -355,6 +373,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CE8824B1ADFA83500069D13 /* SDPhotoBrowser.m in Sources */,
+				2CF3E8541AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m in Sources */,
+				2CF3E8511AE63DA600FE1CC5 /* UINavigationBar+Gradient.m in Sources */,
 				2CBE2C681ACBD3000036FEF2 /* ViewController.m in Sources */,
 				2CE8E3C01ADD140C00C30B24 /* UIImage+CircleRadius.m in Sources */,
 				2CBE2C8D1ACBDB990036FEF2 /* UncaughtExceptionHandler.m in Sources */,

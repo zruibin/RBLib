@@ -11,6 +11,8 @@
 #import "RBChatTimeFormateTool.h"
 #import "SDBrowserImageView.h"
 
+#import "ScrollHiddenBarVC.h"
+
 @interface ViewController ()
 
 @end
@@ -37,4 +39,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)gradientBarAction:(id)sender {
+    ScrollHiddenBarVC *vc = [[ScrollHiddenBarVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 @end

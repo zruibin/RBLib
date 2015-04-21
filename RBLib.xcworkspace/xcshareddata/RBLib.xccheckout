@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BCF4424C-BDEC-4B7E-88D0-15542B9F22B9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RBLib</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F759023E6AE77EEE87088F46E333BABAF9696A55</key>
+		<string>https://git.oschina.net/zruibin/RBLib.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RBLib.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F759023E6AE77EEE87088F46E333BABAF9696A55</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://git.oschina.net/zruibin/RBLib.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F759023E6AE77EEE87088F46E333BABAF9696A55</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F759023E6AE77EEE87088F46E333BABAF9696A55</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RBLib</string>
+		</dict>
+	</array>
+</dict>
+</plist>
