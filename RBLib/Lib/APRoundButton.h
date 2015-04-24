@@ -19,3 +19,5 @@ IB_DESIGNABLE
 @property (nonatomic, strong) UILabel *myLabel;
 
 @end
+
+//NSArray *fontNames = @[@"Lato-Regular", @"Lato-Bold", @"Lato-Italic", @"Lato-Light"];
