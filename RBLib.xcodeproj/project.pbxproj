@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		2C37FC421ACBFC3B0010EFBF /* RBChatTimeFormateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C37FC411ACBFC3B0010EFBF /* RBChatTimeFormateTool.m */; };
 		2C39751D1ACF8B11000B01D7 /* RBSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C39751C1ACF8B11000B01D7 /* RBSegmentedControl.m */; };
+		2C8474611AF7505C00194D2F /* libPods-pop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84745D1AF7505C00194D2F /* libPods-pop.a */; };
+		2C8474621AF7505C00194D2F /* libPods-SDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84745E1AF7505C00194D2F /* libPods-SDWebImage.a */; };
+		2C8474631AF7505C00194D2F /* libPods-UIActivityIndicator-for-SDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84745F1AF7505C00194D2F /* libPods-UIActivityIndicator-for-SDWebImage.a */; };
+		2C8474641AF7505C00194D2F /* libPods-UIDevice-SupportedDevices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8474601AF7505C00194D2F /* libPods-UIDevice-SupportedDevices.a */; };
 		2CBE2C621ACBD3000036FEF2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE2C611ACBD3000036FEF2 /* main.m */; };
 		2CBE2C651ACBD3000036FEF2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE2C641ACBD3000036FEF2 /* AppDelegate.m */; };
 		2CBE2C681ACBD3000036FEF2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE2C671ACBD3000036FEF2 /* ViewController.m */; };
@@ -44,6 +48,10 @@
 		2C37FC411ACBFC3B0010EFBF /* RBChatTimeFormateTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBChatTimeFormateTool.m; sourceTree = "<group>"; };
 		2C39751B1ACF8B11000B01D7 /* RBSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBSegmentedControl.h; sourceTree = "<group>"; };
 		2C39751C1ACF8B11000B01D7 /* RBSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBSegmentedControl.m; sourceTree = "<group>"; };
+		2C84745D1AF7505C00194D2F /* libPods-pop.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-pop.a"; path = "Pods/../build/Debug-iphoneos/libPods-pop.a"; sourceTree = "<group>"; };
+		2C84745E1AF7505C00194D2F /* libPods-SDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-SDWebImage.a"; path = "Pods/../build/Debug-iphoneos/libPods-SDWebImage.a"; sourceTree = "<group>"; };
+		2C84745F1AF7505C00194D2F /* libPods-UIActivityIndicator-for-SDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-UIActivityIndicator-for-SDWebImage.a"; path = "Pods/../build/Debug-iphoneos/libPods-UIActivityIndicator-for-SDWebImage.a"; sourceTree = "<group>"; };
+		2C8474601AF7505C00194D2F /* libPods-UIDevice-SupportedDevices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-UIDevice-SupportedDevices.a"; path = "Pods/../build/Debug-iphoneos/libPods-UIDevice-SupportedDevices.a"; sourceTree = "<group>"; };
 		2CBE2C5C1ACBD3000036FEF2 /* RBLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RBLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBE2C601ACBD3000036FEF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CBE2C611ACBD3000036FEF2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -87,6 +95,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C8474611AF7505C00194D2F /* libPods-pop.a in Frameworks */,
+				2C8474621AF7505C00194D2F /* libPods-SDWebImage.a in Frameworks */,
+				2C8474631AF7505C00194D2F /* libPods-UIActivityIndicator-for-SDWebImage.a in Frameworks */,
+				2C8474641AF7505C00194D2F /* libPods-UIDevice-SupportedDevices.a in Frameworks */,
 				E9FF1B3C26FC9E49C0BC6FD5 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +242,10 @@
 		6C813DD4121C775F6518B192 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C84745D1AF7505C00194D2F /* libPods-pop.a */,
+				2C84745E1AF7505C00194D2F /* libPods-SDWebImage.a */,
+				2C84745F1AF7505C00194D2F /* libPods-UIActivityIndicator-for-SDWebImage.a */,
+				2C8474601AF7505C00194D2F /* libPods-UIDevice-SupportedDevices.a */,
 				722091F74D5DD9D641EC4AA3 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -511,6 +527,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RBLib/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -522,6 +542,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RBLib/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -1,4 +1,6 @@
 PODS:
+  - Masonry (0.6.1)
+  - pop (1.0.7)
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
@@ -7,11 +9,15 @@ PODS:
   - UIDevice-SupportedDevices (1.0.3)
 
 DEPENDENCIES:
+  - Masonry
+  - pop (~> 1.0)
   - SDWebImage (~> 3.7)
   - UIActivityIndicator-for-SDWebImage
   - UIDevice-SupportedDevices
 
 SPEC CHECKSUMS:
+  Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
   UIActivityIndicator-for-SDWebImage: 7bf7ebbf0ed1747dedc0d6e949c4603a6d0f9e0c
   UIDevice-SupportedDevices: 385fc64737c0caa8cf6380c31f3b2230bba58a2c

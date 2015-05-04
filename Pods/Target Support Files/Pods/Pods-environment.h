@@ -6,6 +6,12 @@
 // project.
 
 
+// Masonry
+#define COCOAPODS_POD_AVAILABLE_Masonry
+#define COCOAPODS_VERSION_MAJOR_Masonry 0
+#define COCOAPODS_VERSION_MINOR_Masonry 6
+#define COCOAPODS_VERSION_PATCH_Masonry 1
+
 // SDWebImage
 #define COCOAPODS_POD_AVAILABLE_SDWebImage
 #define COCOAPODS_VERSION_MAJOR_SDWebImage 3
@@ -29,4 +35,10 @@
 #define COCOAPODS_VERSION_MAJOR_UIDevice_SupportedDevices 1
 #define COCOAPODS_VERSION_MINOR_UIDevice_SupportedDevices 0
 #define COCOAPODS_VERSION_PATCH_UIDevice_SupportedDevices 3
+
+// pop
+#define COCOAPODS_POD_AVAILABLE_pop
+#define COCOAPODS_VERSION_MAJOR_pop 1
+#define COCOAPODS_VERSION_MINOR_pop 0
+#define COCOAPODS_VERSION_PATCH_pop 7
 

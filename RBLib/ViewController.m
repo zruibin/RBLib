@@ -10,10 +10,15 @@
 #import "RBMarco.h"
 #import "RBChatTimeFormateTool.h"
 #import "SDBrowserImageView.h"
+#import "APRoundButton.h"
 
 #import "ScrollHiddenBarVC.h"
 
+#import <pop/POP.h>
+
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet APRoundButton *popAnimation;
 
 @end
 
@@ -43,4 +48,27 @@
     ScrollHiddenBarVC *vc = [[ScrollHiddenBarVC alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+- (IBAction)popAnimationEvent:(id)sender {
+    
+    POPSpringAnimation *animation = [POPSpringAnimation animation];
+    animation.property = [POPAnimatableProperty propertyWithName:kPOPLayerTranslationY];
+    animation.fromValue = @-50.0;
+    animation.toValue = @0.0;
+    animation.springBounciness = 10.0;
+    animation.springSpeed = 12.0;
+    [self.popAnimation.layer pop_addAnimation:animation forKey:@"pop"];
+}
+
+
+
+
+
 @end
+
+
+
+
+
+
+
