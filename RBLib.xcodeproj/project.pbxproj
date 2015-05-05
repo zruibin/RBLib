@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2C37FC421ACBFC3B0010EFBF /* RBChatTimeFormateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C37FC411ACBFC3B0010EFBF /* RBChatTimeFormateTool.m */; };
 		2C39751D1ACF8B11000B01D7 /* RBSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C39751C1ACF8B11000B01D7 /* RBSegmentedControl.m */; };
+		2C3B5F9A1AF8B60300A424DA /* LifeCycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B5F981AF8B60300A424DA /* LifeCycleViewController.m */; };
+		2C3B5F9B1AF8B60300A424DA /* LifeCycleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3B5F991AF8B60300A424DA /* LifeCycleViewController.xib */; };
 		2C8474611AF7505C00194D2F /* libPods-pop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84745D1AF7505C00194D2F /* libPods-pop.a */; };
 		2C8474621AF7505C00194D2F /* libPods-SDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84745E1AF7505C00194D2F /* libPods-SDWebImage.a */; };
 		2C8474631AF7505C00194D2F /* libPods-UIActivityIndicator-for-SDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84745F1AF7505C00194D2F /* libPods-UIActivityIndicator-for-SDWebImage.a */; };
@@ -49,6 +51,9 @@
 		2C37FC411ACBFC3B0010EFBF /* RBChatTimeFormateTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBChatTimeFormateTool.m; sourceTree = "<group>"; };
 		2C39751B1ACF8B11000B01D7 /* RBSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBSegmentedControl.h; sourceTree = "<group>"; };
 		2C39751C1ACF8B11000B01D7 /* RBSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBSegmentedControl.m; sourceTree = "<group>"; };
+		2C3B5F971AF8B60300A424DA /* LifeCycleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifeCycleViewController.h; sourceTree = "<group>"; };
+		2C3B5F981AF8B60300A424DA /* LifeCycleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifeCycleViewController.m; sourceTree = "<group>"; };
+		2C3B5F991AF8B60300A424DA /* LifeCycleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LifeCycleViewController.xib; sourceTree = "<group>"; };
 		2C84745D1AF7505C00194D2F /* libPods-pop.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-pop.a"; path = "Pods/../build/Debug-iphoneos/libPods-pop.a"; sourceTree = "<group>"; };
 		2C84745E1AF7505C00194D2F /* libPods-SDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-SDWebImage.a"; path = "Pods/../build/Debug-iphoneos/libPods-SDWebImage.a"; sourceTree = "<group>"; };
 		2C84745F1AF7505C00194D2F /* libPods-UIActivityIndicator-for-SDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-UIActivityIndicator-for-SDWebImage.a"; path = "Pods/../build/Debug-iphoneos/libPods-UIActivityIndicator-for-SDWebImage.a"; sourceTree = "<group>"; };
@@ -134,6 +139,16 @@
 			path = RBSegmentedControl;
 			sourceTree = "<group>";
 		};
+		2C3B5F961AF8B5B800A424DA /* LifeCycle */ = {
+			isa = PBXGroup;
+			children = (
+				2C3B5F971AF8B60300A424DA /* LifeCycleViewController.h */,
+				2C3B5F981AF8B60300A424DA /* LifeCycleViewController.m */,
+				2C3B5F991AF8B60300A424DA /* LifeCycleViewController.xib */,
+			);
+			path = LifeCycle;
+			sourceTree = "<group>";
+		};
 		2CBE2C531ACBD2FF0036FEF2 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				2CBE2C891ACBD54E0036FEF2 /* Lib */,
+				2C3B5F961AF8B5B800A424DA /* LifeCycle */,
 				2CF3E8521AE63DEE00FE1CC5 /* ScrollHiddenBarVC.h */,
 				2CF3E8531AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m */,
 				2CBE2C6C1ACBD3000036FEF2 /* Images.xcassets */,
@@ -339,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CBE2C6B1ACBD3000036FEF2 /* Main.storyboard in Resources */,
+				2C3B5F9B1AF8B60300A424DA /* LifeCycleViewController.xib in Resources */,
 				2CBE2C701ACBD3000036FEF2 /* LaunchScreen.xib in Resources */,
 				2CBE2C881ACBD3B10036FEF2 /* RBLib.podspec in Resources */,
 				2CBE2C871ACBD3B10036FEF2 /* Podfile in Resources */,
@@ -398,6 +415,7 @@
 				2CF3E8541AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m in Sources */,
 				2CF3E8511AE63DA600FE1CC5 /* UINavigationBar+Gradient.m in Sources */,
 				2CBE2C681ACBD3000036FEF2 /* ViewController.m in Sources */,
+				2C3B5F9A1AF8B60300A424DA /* LifeCycleViewController.m in Sources */,
 				2CE8E3C01ADD140C00C30B24 /* UIImage+CircleRadius.m in Sources */,
 				2CBE2C8D1ACBDB990036FEF2 /* UncaughtExceptionHandler.m in Sources */,
 				2CBE2C651ACBD3000036FEF2 /* AppDelegate.m in Sources */,

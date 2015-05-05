@@ -13,6 +13,7 @@
 #import "APRoundButton.h"
 
 #import "ScrollHiddenBarVC.h"
+#import "LifeCycle/LifeCycleViewController.h"
 
 #import <pop/POP.h>
 
@@ -53,13 +54,12 @@
     
     POPSpringAnimation *animation = [POPSpringAnimation animation];
     animation.property = [POPAnimatableProperty propertyWithName:kPOPLayerTranslationY];
-    animation.fromValue = @-50.0;
+    animation.fromValue = @-15.0;
     animation.toValue = @0.0;
-    animation.springBounciness = 10.0;
+    animation.springBounciness = 30.0;
     animation.springSpeed = 12.0;
     [self.popAnimation.layer pop_addAnimation:animation forKey:@"pop"];
 }
-
 
 
 

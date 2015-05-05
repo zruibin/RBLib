@@ -18,9 +18,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-//    InstallUncaughtExceptionHandler();
-//    int i = 1/ [@"r" intValue];
-//    NSLog(@"%i", i);
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    
+//    LifeCycleViewController *lifeCycleVC = [[LifeCycleViewController alloc] init];
+//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:lifeCycleVC];
+//    
+//    self.window.rootViewController = nav;
+//    
+//    [self.window makeKeyAndVisible];
+
     return YES;
 }
 

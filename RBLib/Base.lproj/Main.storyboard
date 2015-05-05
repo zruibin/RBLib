@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EdZ-Uo-nhq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="EdZ-Uo-nhq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,12 +14,15 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6p-bN-aXX" customClass="APRoundButton">
-                                <rect key="frame" x="50" y="104" width="500" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6p-bN-aXX" customClass="APRoundButton">
+                                <rect key="frame" x="66" y="80" width="188" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.76078431369999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="IrJ-mJ-ngJ"/>
+                                </constraints>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -37,11 +41,43 @@
                                     <action selector="popAnimationEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ktC-g1-fGO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90A-Ng-bLW">
+                                <rect key="frame" x="50" y="160" width="90" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.76078431369999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bqD-1a-wCk"/>
+                                    <constraint firstAttribute="width" constant="90" id="rWn-c7-8DF"/>
+                                </constraints>
+                                <state key="normal" title="LifeCycle">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="s9O-MI-QBn" kind="push" id="Odv-9N-qNF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fq-z5-GCK">
+                                <rect key="frame" x="180" y="160" width="90" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.76078431369999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5aH-u3-ePb"/>
+                                    <constraint firstAttribute="width" constant="90" id="dBh-Pj-UZ2"/>
+                                </constraints>
+                                <state key="normal" title="LifeCycleNib">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="g6p-bN-aXX" secondAttribute="trailing" constant="50" id="KFn-Ch-gaV"/>
-                            <constraint firstItem="g6p-bN-aXX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="js9-Mw-otN"/>
+                            <constraint firstItem="90A-Ng-bLW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="1LY-GQ-Hob"/>
+                            <constraint firstItem="90A-Ng-bLW" firstAttribute="top" secondItem="9fq-z5-GCK" secondAttribute="top" id="Mam-dy-NHl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g6p-bN-aXX" secondAttribute="trailing" constant="50" id="O2L-of-Z1v"/>
+                            <constraint firstItem="90A-Ng-bLW" firstAttribute="top" secondItem="g6p-bN-aXX" secondAttribute="bottom" constant="30" id="Xl9-OC-sRY"/>
+                            <constraint firstItem="9fq-z5-GCK" firstAttribute="leading" secondItem="90A-Ng-bLW" secondAttribute="trailing" constant="40" id="hdc-A0-1pb"/>
+                            <constraint firstAttribute="trailing" secondItem="9fq-z5-GCK" secondAttribute="trailing" constant="50" id="kVe-QP-0hd"/>
+                            <constraint firstItem="9fq-z5-GCK" firstAttribute="leading" secondItem="90A-Ng-bLW" secondAttribute="trailing" constant="40" id="mwI-Jb-9cU"/>
+                            <constraint firstItem="g6p-bN-aXX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="80" id="pHo-jr-Vbj"/>
+                            <constraint firstItem="g6p-bN-aXX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="x0m-Yb-QQJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MUk-xb-pYE">
@@ -64,7 +100,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="-336"/>
+            <point key="canvasLocation" x="538" y="-319"/>
+        </scene>
+        <!--Life Cycle View Controller-->
+        <scene sceneID="bG6-HP-zZq">
+            <objects>
+                <viewController id="s9O-MI-QBn" customClass="LifeCycleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6R9-ZL-DRV"/>
+                        <viewControllerLayoutGuide type="bottom" id="opC-9j-FA1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kqE-Tp-v2U">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WF0-Ek-yej"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tAS-Pd-XnS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="990" y="-419"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bqr-zF-B4a">
@@ -82,7 +137,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u60-Op-5yB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="-336"/>
+            <point key="canvasLocation" x="162.66666666666666" y="-318.07999999999998"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
