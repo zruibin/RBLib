@@ -56,6 +56,11 @@
 
 #pragma mark - Life Cycle
 
+- (void)dealloc
+{
+    NSLog(@"dealloc");
+}
+
 //- (void)loadView
 //{
 //    // This is where subclasses should create their custom view hierarchy if they aren't using a nib. Should never be called directly.
@@ -195,6 +200,10 @@
  但是只有在页面元素需要调整时才会调用，避免了Constraints的重复添加。
  */
 
+// MARK: 
+/*
+    让viewWillAppear、viewDidAppear调用无数次，而viewDidDisappear一次也不触发，iOS7增加这个手势，从屏幕左边缘往右滑会有个pop的效果，但是不要滑到触发pop
+ */
 
 
 

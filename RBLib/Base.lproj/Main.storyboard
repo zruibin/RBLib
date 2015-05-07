@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--ViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -45,8 +45,8 @@
                                 <rect key="frame" x="50" y="160" width="90" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.76078431369999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="bqD-1a-wCk"/>
-                                    <constraint firstAttribute="width" constant="90" id="rWn-c7-8DF"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="bqD-1a-wCk"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="rWn-c7-8DF"/>
                                 </constraints>
                                 <state key="normal" title="LifeCycle">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,7 +59,7 @@
                                 <rect key="frame" x="180" y="160" width="90" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.76078431369999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="5aH-u3-ePb"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="5aH-u3-ePb"/>
                                     <constraint firstAttribute="width" constant="90" id="dBh-Pj-UZ2"/>
                                 </constraints>
                                 <state key="normal" title="LifeCycleNib">
@@ -73,14 +73,14 @@
                             <constraint firstItem="90A-Ng-bLW" firstAttribute="top" secondItem="9fq-z5-GCK" secondAttribute="top" id="Mam-dy-NHl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g6p-bN-aXX" secondAttribute="trailing" constant="50" id="O2L-of-Z1v"/>
                             <constraint firstItem="90A-Ng-bLW" firstAttribute="top" secondItem="g6p-bN-aXX" secondAttribute="bottom" constant="30" id="Xl9-OC-sRY"/>
-                            <constraint firstItem="9fq-z5-GCK" firstAttribute="leading" secondItem="90A-Ng-bLW" secondAttribute="trailing" constant="40" id="hdc-A0-1pb"/>
+                            <constraint firstItem="9fq-z5-GCK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="90A-Ng-bLW" secondAttribute="trailing" constant="40" id="hdc-A0-1pb"/>
                             <constraint firstAttribute="trailing" secondItem="9fq-z5-GCK" secondAttribute="trailing" constant="50" id="kVe-QP-0hd"/>
-                            <constraint firstItem="9fq-z5-GCK" firstAttribute="leading" secondItem="90A-Ng-bLW" secondAttribute="trailing" constant="40" id="mwI-Jb-9cU"/>
+                            <constraint firstItem="9fq-z5-GCK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="90A-Ng-bLW" secondAttribute="trailing" constant="40" id="mwI-Jb-9cU"/>
                             <constraint firstItem="g6p-bN-aXX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="80" id="pHo-jr-Vbj"/>
                             <constraint firstItem="g6p-bN-aXX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="x0m-Yb-QQJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="MUk-xb-pYE">
+                    <navigationItem key="navigationItem" title="ViewController" id="MUk-xb-pYE">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="uin-fV-OwH">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="92S-M7-cO7">
                                 <rect key="frame" x="-23" y="-15" width="133" height="30"/>
