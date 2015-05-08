@@ -7,11 +7,15 @@
 //
 
 #import "LifeCycleViewController.h"
+#import "LifeCycleView.h"
+#import "RBMarco.h"
+#import <Masonry/Masonry.h>
 
 @interface LifeCycleViewController ()
 
 @property (nonatomic, strong) UILabel  *label;
 @property (nonatomic, strong) UIButton *button;
+@property (nonatomic, strong) LifeCycleView *lifeCycleView;
 
 @end
 
@@ -21,7 +25,7 @@
 
 - (instancetype)init
 {
-     NSLog(@"init");
+    DLog(@"init");
     self = [super init];
     if (self) {
         
@@ -31,7 +35,7 @@
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
-     NSLog(@"initWithCoder");
+    DLog(@"initWithCoder");
     self = [super initWithCoder:aDecoder];
     if (self) {
         
@@ -41,7 +45,7 @@
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-     NSLog(@"initWithNibName");
+    DLog(@"initWithNibName");
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
@@ -51,33 +55,33 @@
 
 - (void)awakeFromNib
 {
-     NSLog(@"awakeFromNib");
+     DLog(@"awakeFromNib");
 }
 
 #pragma mark - Life Cycle
 
 - (void)dealloc
 {
-    NSLog(@"dealloc");
+    DLog(@"dealloc");
 }
 
 //- (void)loadView
 //{
 //    // This is where subclasses should create their custom view hierarchy if they aren't using a nib. Should never be called directly.
-//    NSLog(@"loadView");
+//    DLog(@"loadView");
 //    //无论手写或storyboard或xib，都需设置初始view的大小，否则会每次都重新调用viewDidLoad
 //    self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
 //}
 
 - (void)viewWillUnload
 {
-    NSLog(@"viewWillUnload");
+    DLog(@"viewWillUnload");
 }
 
 - (void)viewDidUnload
 {
     // Called after the view controller's view is released and set to nil. For example, a memory warning which causes the view to be purged. Not invoked as a result of -dealloc.
-    NSLog(@"viewDidUnload");
+    DLog(@"viewDidUnload");
 
 }
 
@@ -85,16 +89,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    NSLog(@"viewDidLoad...");
+    DLog(@"viewDidLoad...");
     
     [self.view addSubview:self.label];
     [self.view addSubview:self.button];
+    [self.view addSubview:self.lifeCycleView];
+    
+    self.label.frame = CGRectMake(10, 70, 60, 30);
+    self.button.frame = CGRectMake(10, 130, 80, 40);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-    NSLog(@"didReceiveMemoryWarning");
+    DLog(@"didReceiveMemoryWarning");
 }
 
 /*
@@ -111,45 +119,125 @@
 {
     [super viewWillAppear:animated];
     // Called when the view is about to made visible. Default does nothing
-    NSLog(@"viewWillAppear");
+    DLog(@"viewWillAppear");
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     // Called when the view has been fully transitioned onto the screen. Default does nothing
-    NSLog(@"viewDidAppear");
+    DLog(@"viewDidAppear");
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     // Called when the view is dismissed, covered or otherwise hidden. Default does nothing
-    NSLog(@"viewWillDisappear");
+    DLog(@"viewWillDisappear");
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
     // Called after the view was dismissed, covered or otherwise hidden. Default does nothing
-    NSLog(@"viewDidDisappear");
+    DLog(@"viewDidDisappear");
 }
 
 - (void)viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];
     // Called just before the view controller's view's layoutSubviews method is invoked. Subclasses can implement as necessary. The default is a nop.
-    NSLog(@"viewWillLayoutSubviews");
-    
-    self.label.frame = CGRectMake(10, 70, 60, 30);
-    self.button.frame = CGRectMake(10, 130, 80, 40);
+    DLog(@"viewWillLayoutSubviews");
 }
-
 
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
     // Called just after the view controller's view's layoutSubviews method is invoked. Subclasses can implement as necessary. The default is a nop.
-    NSLog(@"viewDidLayoutSubviews");
+    DLog(@"viewDidLayoutSubviews");
+}
+
+- (void)layoutPageSubviews
+{
+    // MARK: Default
+//    UIEdgeInsets padding = UIEdgeInsetsMake(20, 10, 10, 10);
+//    [self.view addConstraints:@[
+//                                [NSLayoutConstraint constraintWithItem:self.lifeCycleView
+//                                                             attribute:NSLayoutAttributeTop
+//                                                             relatedBy:NSLayoutRelationEqual
+//                                                                toItem:self.button
+//                                                             attribute:NSLayoutAttributeBottom  //参照self.button的底部
+//                                                            multiplier:1.0
+//                                                              constant:padding.top],
+////                                [NSLayoutConstraint constraintWithItem:self.lifeCycleView
+////                                                             attribute:NSLayoutAttributeBottom
+////                                                             relatedBy:NSLayoutRelationEqual
+////                                                                toItem:self.view
+////                                                             attribute:NSLayoutAttributeBottom
+////                                                            multiplier:1.0
+////                                                              constant:-padding.bottom],
+//                                
+//                                [NSLayoutConstraint constraintWithItem:self.lifeCycleView
+//                                                             attribute:NSLayoutAttributeLeft
+//                                                             relatedBy:NSLayoutRelationEqual
+//                                                                toItem:self.view
+//                                                             attribute:NSLayoutAttributeLeft
+//                                                            multiplier:1.0
+//                                                              constant:padding.left],
+//                                [NSLayoutConstraint constraintWithItem:self.lifeCycleView
+//                                                             attribute:NSLayoutAttributeRight
+//                                                             relatedBy:NSLayoutRelationEqual
+//                                                                toItem:self.view
+//                                                             attribute:NSLayoutAttributeRight
+//                                                            multiplier:1
+//                                                              constant:-padding.right],
+//                                
+//                                //相当于父view的三分之一
+////                                [NSLayoutConstraint constraintWithItem:self.lifeCycleView
+////                                                             attribute:NSLayoutAttributeHeight
+////                                                             relatedBy:NSLayoutRelationEqual
+////                                                                toItem:self.view
+////                                                             attribute:NSLayoutAttributeHeight
+////                                                            multiplier:0.3
+////                                                              constant:0],
+//                                ]];
+//    [self.lifeCycleView addConstraint:[NSLayoutConstraint
+//                                       constraintWithItem:self.lifeCycleView
+//                                       attribute:NSLayoutAttributeHeight
+//                                       relatedBy:NSLayoutRelationGreaterThanOrEqual
+//                                       toItem:nil
+//                                       attribute:NSLayoutAttributeNotAnAttribute
+//                                       multiplier:1
+//                                       constant:60]];
+    
+    // MARK: VFL
+//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_button]-20-[_lifeCycleView(60)]"
+//                                                                      options:0
+//                                                                      metrics:nil
+//                                                                        views:NSDictionaryOfVariableBindings(_lifeCycleView, _button)]];
+//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[_lifeCycleView(>=100)]-10-|"
+//                                                                      options:0
+//                                                                      metrics:nil
+//                                                                        views:NSDictionaryOfVariableBindings(_lifeCycleView)]];
+    
+    // MARK: Masonry
+    UIEdgeInsets padding = UIEdgeInsetsMake(20, 10, 10, 10);
+    [self.lifeCycleView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.button.mas_bottom).with.offset(padding.top); //with is an optional semantic filler
+        make.left.equalTo(self.view.mas_left).with.offset(padding.left);
+        //        make.bottom.equalTo(self.view.mas_bottom).with.offset(-padding.bottom);
+        make.right.equalTo(self.view.mas_right).with.offset(-padding.right);
+        make.width.greaterThanOrEqualTo(@100);
+        make.height.equalTo(@60);
+    }];
+}
+
+#pragma mark - Event
+
+- (void)changeRect:(UIButton *)btn
+{
+    CGRect rect = btn.frame;
+    rect.origin.y += 50;
+    btn.frame = rect;
 }
 
 
@@ -173,8 +261,19 @@
         [_button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         [_button setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
         _button.backgroundColor = [UIColor greenColor];
+        [_button addTarget:self action:@selector(changeRect:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _button;
+}
+
+- (LifeCycleView *)lifeCycleView
+{
+    if (_lifeCycleView == nil) {
+        _lifeCycleView = [[LifeCycleView alloc] init];
+        _lifeCycleView.translatesAutoresizingMaskIntoConstraints = NO;
+        
+    }
+    return _lifeCycleView;
 }
 
 @end

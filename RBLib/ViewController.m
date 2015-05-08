@@ -61,12 +61,31 @@
     [self.popAnimation.layer pop_addAnimation:animation forKey:@"pop"];
 }
 
-
+//- (void)viewWillLayoutSubviews
+//{
+//    [super viewWillLayoutSubviews];
+//    // Called just before the view controller's view's layoutSubviews method is invoked. Subclasses can implement as necessary. The default is a nop.
+//    NSLog(@"viewWillLayoutSubviews");
+//}
+//
+//- (void)updateViewConstraints
+//{
+//    NSLog(@"updateViewConstraints...");
+//    [super updateViewConstraints];
+//}
 
 
 @end
 
 
+// MARK: 
+/**
+ 要开始使用AutoLayout，请先设置要约束的view的translatesAutoresizingMaskIntoConstraints属性为NO。
+ 在xib或者sb中勾选Use Auto Layout，那么所有在xib或者sb中出现的view都已经默认将translatesAutoresizingMaskIntoConstraints设置为NO
+ */
+
+
+ 
 
 
 
