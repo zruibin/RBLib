@@ -98,6 +98,9 @@
     self.label.frame = CGRectMake(10, 70, 60, 30);
     self.button.frame = CGRectMake(10, 130, 80, 40);
     
+    // MARK: 不能设置，否则会出错
+//    self.view.translatesAutoresizingMaskIntoConstraints = NO; 
+    
     [self layoutPageSubviews];
 }
 
@@ -156,6 +159,12 @@
     [super viewDidLayoutSubviews];
     // Called just after the view controller's view's layoutSubviews method is invoked. Subclasses can implement as necessary. The default is a nop.
     DLog(@"viewDidLayoutSubviews");
+}
+
+- (void)updateViewConstraints
+{
+    DLog(@"updateViewConstraints");
+    [super updateViewConstraints];
 }
 
 - (void)layoutPageSubviews
@@ -302,7 +311,7 @@
 
 @end
 
-
+// MARK: 
 /*
  layoutSubviews在以下情况下会被调用：
  
@@ -314,13 +323,20 @@
  6、改变一个UIView大小的时候也会触发父UIView上的layoutSubviews事件
  
  
- 
  在viewDidLoad里面开一个layoutPageSubviews的方法，然后在这个里面创建Constraints并添加
  
  其实在viewWillAppear这里改变UI元素不是很可靠，Autolayout发生在viewWillAppear之后，严格来说这里通常不做视图位置的修改，而用来更新Form数据。
  改变位置可以放在viewWilllayoutSubview或者didLayoutSubview里，而且在viewDidLayoutSubview确定UI位置关系之后设置autoLayout比较稳妥。
  另外，viewWillAppear在每次页面即将显示都会调用，viewWillLayoutSubviews虽然在lifeCycle里调用顺序在viewWillAppear之后，
  但是只有在页面元素需要调整时才会调用，避免了Constraints的重复添加。
+ 
+ 添加约束于viewDidLoad中添加，修改与删除则于viewWillLayoutSubviews或viewDidLayoutSubviews中(viewWillLayoutSubviews->updateViewConstraints->viewDidLayoutSubviews)
+ 
+ 要开始使用AutoLayout，请先设置要约束的view的translatesAutoresizingMaskIntoConstraints属性为NO。
+ 在xib或者sb中勾选Use Auto Layout，那么所有在xib或者sb中出现的view都已经默认将translatesAutoresizingMaskIntoConstraints设置为NO
+ 通过代码为xib或sb中view增加约束时，尽量避免在viewDidLoad中执行，最好放在updateViewConstraints[UIViewController]或者updateConstraints[UIView]中，
+ 记得调用[super updateViewConstraints]或者[super updateConstraints];
+ 
  */
 
 // MARK: 

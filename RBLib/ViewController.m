@@ -17,6 +17,7 @@
 
 #import <pop/POP.h>
 
+
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet APRoundButton *popAnimation;
@@ -59,30 +60,31 @@
     animation.springBounciness = 30.0;
     animation.springSpeed = 12.0;
     [self.popAnimation.layer pop_addAnimation:animation forKey:@"pop"];
+    
+    [self myLog:@"312",@"321", nil];//必须有nil
 }
 
-//- (void)viewWillLayoutSubviews
-//{
-//    [super viewWillLayoutSubviews];
-//    // Called just before the view controller's view's layoutSubviews method is invoked. Subclasses can implement as necessary. The default is a nop.
-//    NSLog(@"viewWillLayoutSubviews");
-//}
-//
-//- (void)updateViewConstraints
-//{
-//    NSLog(@"updateViewConstraints...");
-//    [super updateViewConstraints];
-//}
+#pragma mark -- Object-C中编写省略参数的多参函数
+
+- (void) myLog:(NSString *)str,...NS_REQUIRES_NIL_TERMINATION{//省略参数的写法
+    
+    va_list list;//创建一个列表指针对象
+    va_start(list, str);//进行列表的初始化，第一个参数是va_list对象，第二个参数是参数列表的第一个参数。
+    NSString * temStr = str;
+    while (temStr!=nil) {//如果不是nil，则继续取值
+        NSLog(@"%@",temStr);
+        
+        //一个用于取出参数的宏，这个宏的第一个参数是va_list对象，第二个参数是要取出的参数类型。
+        temStr = va_arg(list, NSString*);//返回取到的值，并且让指针指向下一个参数的地址
+    }
+    va_end(list);//关闭列表指针
+}
 
 
 @end
 
 
-// MARK: 
-/**
- 要开始使用AutoLayout，请先设置要约束的view的translatesAutoresizingMaskIntoConstraints属性为NO。
- 在xib或者sb中勾选Use Auto Layout，那么所有在xib或者sb中出现的view都已经默认将translatesAutoresizingMaskIntoConstraints设置为NO
- */
+
 
 
  

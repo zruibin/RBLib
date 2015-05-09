@@ -85,9 +85,8 @@
 @end
 
 
-
+// MARK: 
 /*
- 
  setNeedsUpdateConstraints:当一个自定义的View某一个属性的改变可能影响到界面布局，我们应该调用这个方法来告诉布局系统在未来某个时刻需要更新。
                             系统会调用updateConstraints去更新布局。
  
