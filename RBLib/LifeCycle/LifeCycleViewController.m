@@ -97,6 +97,8 @@
     
     self.label.frame = CGRectMake(10, 70, 60, 30);
     self.button.frame = CGRectMake(10, 130, 80, 40);
+    
+    [self layoutPageSubviews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -229,6 +231,7 @@
         make.width.greaterThanOrEqualTo(@100);
         make.height.equalTo(@60);
     }];
+
 }
 
 #pragma mark - Event
@@ -238,6 +241,26 @@
     CGRect rect = btn.frame;
     rect.origin.y += 50;
     btn.frame = rect;
+    
+    // MARK: 修改lifeCycleView的Top约束
+    for (NSLayoutConstraint *constraint in self.view.constraints) {
+        // MARK: self.lifeCycleView.superview可能不止只有对一个view的约束，可以还有其他view的约束，所以要注意
+        if (constraint.firstItem == self.lifeCycleView && constraint.firstAttribute == NSLayoutAttributeTop) {
+            constraint.constant = 100;
+            DLog(@"constraint.constant:%f", constraint.constant);
+
+            [UIView animateWithDuration:2 animations:^{
+                [self.lifeCycleView.superview layoutIfNeeded];
+            }];
+        };
+    }
+    
+    // MARK: 删除lifeCycleView的所有约束
+//    for (NSLayoutConstraint *constraint in self.lifeCycleView.superview.constraints) {
+//        if (constraint.firstItem == self.lifeCycleView) {
+//            [self.view removeConstraint:constraint];
+//        }
+//    }
 }
 
 
@@ -249,6 +272,7 @@
         _label = [[UILabel alloc] init];
         _label.backgroundColor = [UIColor yellowColor];
         _label.text = @"label";
+//        _label.preferredMaxLayoutWidth
     }
     return _label;
 }
