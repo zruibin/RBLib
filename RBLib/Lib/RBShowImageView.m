@@ -1,5 +1,5 @@
 //
-//  YMShowImageView.m
+//  RBShowImageView.m
 //  RBLib
 //
 //  Created by zruibin on 15/4/14.
@@ -17,6 +17,9 @@
     BOOL         doubleClick;
 }
 
+@property (nonatomic, strong) UILabel *indexLabel;
+@property (nonatomic, assign) NSInteger imagsCount;
+
 - (void)configScrollViewWithImages:(NSArray *)imags;
 
 @end
@@ -29,7 +32,7 @@
     if (self) {
         self.frame = kMainScreen;
         self_Frame = kMainScreen;
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor blackColor];
         self.alpha  = 0.0f;
         page        = 0;
         doubleClick = YES;
@@ -44,6 +47,10 @@
         [self addGestureRecognizer:doubleTapGser];
 
         [self configScrollViewWithImages:imgs];
+        
+        [self addSubview:self.indexLabel];
+        if (imgs.count > 1) self.indexLabel.text = [NSString stringWithFormat:@"1/%ld", (long)imgs.count];
+        _imagsCount = imgs.count;
     }
     return self;
 }
@@ -83,7 +90,7 @@
     [UIView animateWithDuration:.4f animations:^(){
         self.alpha = .0f;
     } completion:^(BOOL finished) {
-       [self removeFromSuperview];
+        [self removeFromSuperview];
     }];
 }
 
@@ -128,6 +135,11 @@
 {
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
     [window addSubview:self];
+    
+    self.indexLabel.text = [NSString stringWithFormat:@"%ld/%ld", (long)(_currentImageIndex + 1), (long) self.imagsCount];
+//    [_scrollView scrollRectToVisible:CGRectMake(_scrollView.frame.size.width * _currentImageIndex, 0, _scrollView.frame.size.width, _scrollView.frame.size.height) animated:NO];
+    [_scrollView setContentOffset:CGPointMake(_scrollView.frame.size.width * _currentImageIndex, 0)];
+    
     [UIView animateWithDuration:.4f animations:^(){
         self.alpha = 1.0f;
     } completion:^(BOOL finished) {
@@ -135,8 +147,12 @@
     }];
 }
 
-
 #pragma mark - ScorllViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    int index = (scrollView.contentOffset.x + _scrollView.bounds.size.width * 0.5) / _scrollView.bounds.size.width;
+    self.indexLabel.text = [NSString stringWithFormat:@"%d/%ld", index + 1, (long) self.imagsCount];
+}
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
   
@@ -161,6 +177,22 @@
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView{
   
 
+}
+
+
+#pragma mark -- getter
+
+- (UILabel *)indexLabel
+{
+    if (_indexLabel == nil) {
+        _indexLabel = [[UILabel alloc] init];
+        _indexLabel.frame = CGRectMake(0, 20, kMainScreen.size.width, 30);
+        _indexLabel.textAlignment = NSTextAlignmentCenter;
+        _indexLabel.textColor = [UIColor whiteColor];
+        _indexLabel.font = [UIFont boldSystemFontOfSize:20];
+        _indexLabel.backgroundColor = [UIColor clearColor];
+    }
+    return _indexLabel;
 }
 
 @end

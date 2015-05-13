@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "RBMarco.h"
 #import "RBChatTimeFormateTool.h"
-#import "SDBrowserImageView.h"
+
 #import "APRoundButton.h"
 
 #import "ScrollHiddenBarVC.h"

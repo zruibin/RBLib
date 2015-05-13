@@ -10,10 +10,8 @@
 
 
 @interface RBShowImageView : UIView<UIScrollViewDelegate>
-{
-    UIImageView *showImage;
-}
 
+@property (nonatomic, assign) NSInteger currentImageIndex;
 
 /**
  *  初始化
