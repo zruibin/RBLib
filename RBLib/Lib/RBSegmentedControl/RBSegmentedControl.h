@@ -14,7 +14,7 @@ typedef enum {
     RBSegmentedControlSelectionStyleTextWidthStripe, // Indicator width will only be as big as the text width
     RBSegmentedControlSelectionStyleFullWidthStripe, // Indicator width will fill the whole segment
     RBSegmentedControlSelectionStyleBox, // A rectangle that covers the whole segment
-    RBSegmentedControlSelectionStyleArrow // An arrow in the middle of the segment pointing up or down depending on `HMSegmentedControlSelectionIndicatorLocation`
+    RBSegmentedControlSelectionStyleArrow // An arrow in the middle of the segment pointing up or down depending on `RBSegmentedControlSelectionIndicatorLocation`
 } RBSegmentedControlSelectionStyle;
 
 typedef enum {
@@ -52,21 +52,21 @@ typedef enum {
 @property (nonatomic, copy) IndexChangeBlock indexChangeBlock;
 
 /*
- Font for segments names when segmented control type is `HMSegmentedControlTypeText`
+ Font for segments names when segmented control type is `RBSegmentedControlTypeText`
  
  Default is [UIFont fontWithName:@"STHeitiSC-Light" size:18.0f]
  */
 @property (nonatomic, strong) UIFont *font;
 
 /*
- Text color for segments names when segmented control type is `HMSegmentedControlTypeText`
+ Text color for segments names when segmented control type is `RBSegmentedControlTypeText`
  
  Default is [UIColor blackColor]
  */
 @property (nonatomic, strong) UIColor *textColor;
 
 /* 
- Text color for selected segment name when segmented control type is `HMSegmentedControlTypeText`
+ Text color for selected segment name when segmented control type is `RBSegmentedControlTypeText`
  
  Default is [UIColor blackColor]
  */
@@ -96,28 +96,28 @@ typedef enum {
 /*
  Specifies the style of the control
  
- Default is `HMSegmentedControlTypeText`
+ Default is `RBSegmentedControlTypeText`
  */
 @property (nonatomic, assign) RBSegmentedControlType type;
 
 /*
  Specifies the style of the selection indicator.
  
- Default is `HMSegmentedControlSelectionStyleTextWidthStripe`
+ Default is `RBSegmentedControlSelectionStyleTextWidthStripe`
  */
 @property (nonatomic, assign) RBSegmentedControlSelectionStyle selectionStyle;
 
 /*
  Specifies the style of the segment's width.
  
- Default is `HMSegmentedControlSegmentWidthStyleFixed`
+ Default is `RBSegmentedControlSegmentWidthStyleFixed`
  */
 @property (nonatomic, assign) RBSegmentedControlSegmentWidthStyle segmentWidthStyle;
 
 /*
  Specifies the location of the selection indicator.
  
- Default is `HMSegmentedControlSelectionIndicatorLocationUp`
+ Default is `RBSegmentedControlSelectionIndicatorLocationUp`
  */
 @property (nonatomic, assign) RBSegmentedControlSelectionIndicatorLocation selectionIndicatorLocation;
 
@@ -148,7 +148,7 @@ typedef enum {
 @property (nonatomic, assign) NSInteger selectedSegmentIndex;
 
 /*
- Height of the selection indicator. Only effective when `HMSegmentedControlSelectionStyle` is either `HMSegmentedControlSelectionStyleTextWidthStripe` or `HMSegmentedControlSelectionStyleFullWidthStripe`.
+ Height of the selection indicator. Only effective when `RBSegmentedControlSelectionStyle` is either `RBSegmentedControlSelectionStyleTextWidthStripe` or `RBSegmentedControlSelectionStyleFullWidthStripe`.
  
  Default is 5.0
  */
@@ -156,11 +156,11 @@ typedef enum {
 
 /*
  Edge insets for the selection indicator.
- NOTE: This does not affect the bounding box of HMSegmentedControlSelectionStyleBox
+ NOTE: This does not affect the bounding box of RBSegmentedControlSelectionStyleBox
  
- When HMSegmentedControlSelectionIndicatorLocationUp is selected, bottom edge insets are not used
+ When RBSegmentedControlSelectionIndicatorLocationUp is selected, bottom edge insets are not used
  
- When HMSegmentedControlSelectionIndicatorLocationDown is selected, top edge insets are not used
+ When RBSegmentedControlSelectionIndicatorLocationDown is selected, top edge insets are not used
  
  Defaults are top: 0.0f
              left: 0.0f
