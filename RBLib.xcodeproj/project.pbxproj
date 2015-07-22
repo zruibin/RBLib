@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C13F49B1B5F64F90078BA2B /* RBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C13F49A1B5F64F90078BA2B /* RBUtil.m */; };
 		2C34968E1AFCA274005F377D /* LifeCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C34968D1AFCA274005F377D /* LifeCycleView.m */; };
 		2C37FC421ACBFC3B0010EFBF /* RBChatTimeFormateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C37FC411ACBFC3B0010EFBF /* RBChatTimeFormateTool.m */; };
 		2C39751D1ACF8B11000B01D7 /* RBSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C39751C1ACF8B11000B01D7 /* RBSegmentedControl.m */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C13F4991B5F64F90078BA2B /* RBUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBUtil.h; sourceTree = "<group>"; };
+		2C13F49A1B5F64F90078BA2B /* RBUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBUtil.m; sourceTree = "<group>"; };
 		2C34968C1AFCA274005F377D /* LifeCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifeCycleView.h; sourceTree = "<group>"; };
 		2C34968D1AFCA274005F377D /* LifeCycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifeCycleView.m; sourceTree = "<group>"; };
 		2C37FC401ACBFC3B0010EFBF /* RBChatTimeFormateTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBChatTimeFormateTool.h; sourceTree = "<group>"; };
@@ -227,6 +230,8 @@
 				2CBE2C8C1ACBDB990036FEF2 /* UncaughtExceptionHandler.m */,
 				2C37FC401ACBFC3B0010EFBF /* RBChatTimeFormateTool.h */,
 				2C37FC411ACBFC3B0010EFBF /* RBChatTimeFormateTool.m */,
+				2C13F4991B5F64F90078BA2B /* RBUtil.h */,
+				2C13F49A1B5F64F90078BA2B /* RBUtil.m */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 				2CF3E8541AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m in Sources */,
 				2CF3E8511AE63DA600FE1CC5 /* UINavigationBar+Gradient.m in Sources */,
 				2CBE2C681ACBD3000036FEF2 /* ViewController.m in Sources */,
+				2C13F49B1B5F64F90078BA2B /* RBUtil.m in Sources */,
 				2C34968E1AFCA274005F377D /* LifeCycleView.m in Sources */,
 				2C3B5F9A1AF8B60300A424DA /* LifeCycleViewController.m in Sources */,
 				2CE8E3C01ADD140C00C30B24 /* UIImage+CircleRadius.m in Sources */,
