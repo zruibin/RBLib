@@ -32,6 +32,7 @@
 		2CE8E3C01ADD140C00C30B24 /* UIImage+CircleRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE8E3BF1ADD140C00C30B24 /* UIImage+CircleRadius.m */; };
 		2CF3E8511AE63DA600FE1CC5 /* UINavigationBar+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3E8501AE63DA600FE1CC5 /* UINavigationBar+Gradient.m */; };
 		2CF3E8541AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3E8531AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m */; };
+		512DFE5F1B8DB3D6004B4B13 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 512DFE5E1B8DB3D6004B4B13 /* UIImage+Tint.m */; };
 		E9FF1B3C26FC9E49C0BC6FD5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 722091F74D5DD9D641EC4AA3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,8 @@
 		2CF3E8501AE63DA600FE1CC5 /* UINavigationBar+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Gradient.m"; sourceTree = "<group>"; };
 		2CF3E8521AE63DEE00FE1CC5 /* ScrollHiddenBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollHiddenBarVC.h; sourceTree = "<group>"; };
 		2CF3E8531AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollHiddenBarVC.m; sourceTree = "<group>"; };
+		512DFE5D1B8DB3D6004B4B13 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
+		512DFE5E1B8DB3D6004B4B13 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
 		664228D96C57C7F31603BC6D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		722091F74D5DD9D641EC4AA3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B03E503867321FF2118BEA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -232,6 +235,7 @@
 				2C37FC411ACBFC3B0010EFBF /* RBChatTimeFormateTool.m */,
 				2C13F4991B5F64F90078BA2B /* RBUtil.h */,
 				2C13F49A1B5F64F90078BA2B /* RBUtil.m */,
+				512DFE5C1B8DB3D6004B4B13 /* ImageBlend */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -243,6 +247,15 @@
 				2CF3E8501AE63DA600FE1CC5 /* UINavigationBar+Gradient.m */,
 			);
 			path = "UINavigationBar+Gradient";
+			sourceTree = "<group>";
+		};
+		512DFE5C1B8DB3D6004B4B13 /* ImageBlend */ = {
+			isa = PBXGroup;
+			children = (
+				512DFE5D1B8DB3D6004B4B13 /* UIImage+Tint.h */,
+				512DFE5E1B8DB3D6004B4B13 /* UIImage+Tint.m */,
+			);
+			path = ImageBlend;
 			sourceTree = "<group>";
 		};
 		6C813DD4121C775F6518B192 /* Frameworks */ = {
@@ -407,6 +420,7 @@
 				2C37FC421ACBFC3B0010EFBF /* RBChatTimeFormateTool.m in Sources */,
 				2C39751D1ACF8B11000B01D7 /* RBSegmentedControl.m in Sources */,
 				2CBE2C621ACBD3000036FEF2 /* main.m in Sources */,
+				512DFE5F1B8DB3D6004B4B13 /* UIImage+Tint.m in Sources */,
 				2C4BD75D1B031FED00CB291F /* RBShowImageView.m in Sources */,
 				2CD693131ADE516D003C5927 /* APRoundButton.m in Sources */,
 			);
