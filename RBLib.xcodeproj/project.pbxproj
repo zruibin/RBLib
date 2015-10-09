@@ -32,7 +32,7 @@
 		2CE8E3C01ADD140C00C30B24 /* UIImage+CircleRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE8E3BF1ADD140C00C30B24 /* UIImage+CircleRadius.m */; };
 		2CF3E8511AE63DA600FE1CC5 /* UINavigationBar+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3E8501AE63DA600FE1CC5 /* UINavigationBar+Gradient.m */; };
 		2CF3E8541AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3E8531AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m */; };
-		51010E2A1BBBF59500BC402C /* ClassPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 51010E291BBBF59500BC402C /* ClassPrinter.m */; settings = {ASSET_TAGS = (); }; };
+		510F27FD1BC77FB30035D26A /* RBClassHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 510F27FC1BC77FB30035D26A /* RBClassHook.m */; settings = {ASSET_TAGS = (); }; };
 		512DFE5F1B8DB3D6004B4B13 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 512DFE5E1B8DB3D6004B4B13 /* UIImage+Tint.m */; };
 		E9FF1B3C26FC9E49C0BC6FD5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 722091F74D5DD9D641EC4AA3 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -91,8 +91,8 @@
 		2CF3E8501AE63DA600FE1CC5 /* UINavigationBar+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Gradient.m"; sourceTree = "<group>"; };
 		2CF3E8521AE63DEE00FE1CC5 /* ScrollHiddenBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollHiddenBarVC.h; sourceTree = "<group>"; };
 		2CF3E8531AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollHiddenBarVC.m; sourceTree = "<group>"; };
-		51010E281BBBF59500BC402C /* ClassPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassPrinter.h; sourceTree = "<group>"; };
-		51010E291BBBF59500BC402C /* ClassPrinter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassPrinter.m; sourceTree = "<group>"; };
+		510F27FB1BC77FB30035D26A /* RBClassHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBClassHook.h; sourceTree = "<group>"; };
+		510F27FC1BC77FB30035D26A /* RBClassHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBClassHook.m; sourceTree = "<group>"; };
 		512DFE5D1B8DB3D6004B4B13 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
 		512DFE5E1B8DB3D6004B4B13 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
 		664228D96C57C7F31603BC6D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -239,8 +239,8 @@
 				2C13F4991B5F64F90078BA2B /* RBUtil.h */,
 				2C13F49A1B5F64F90078BA2B /* RBUtil.m */,
 				512DFE5C1B8DB3D6004B4B13 /* ImageBlend */,
-				51010E281BBBF59500BC402C /* ClassPrinter.h */,
-				51010E291BBBF59500BC402C /* ClassPrinter.m */,
+				510F27FB1BC77FB30035D26A /* RBClassHook.h */,
+				510F27FC1BC77FB30035D26A /* RBClassHook.m */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -417,13 +417,13 @@
 				2CF3E8541AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m in Sources */,
 				2CF3E8511AE63DA600FE1CC5 /* UINavigationBar+Gradient.m in Sources */,
 				2CBE2C681ACBD3000036FEF2 /* ViewController.m in Sources */,
-				51010E2A1BBBF59500BC402C /* ClassPrinter.m in Sources */,
 				2C13F49B1B5F64F90078BA2B /* RBUtil.m in Sources */,
 				2C34968E1AFCA274005F377D /* LifeCycleView.m in Sources */,
 				2C3B5F9A1AF8B60300A424DA /* LifeCycleViewController.m in Sources */,
 				2CE8E3C01ADD140C00C30B24 /* UIImage+CircleRadius.m in Sources */,
 				2CBE2C8D1ACBDB990036FEF2 /* UncaughtExceptionHandler.m in Sources */,
 				2CBE2C651ACBD3000036FEF2 /* AppDelegate.m in Sources */,
+				510F27FD1BC77FB30035D26A /* RBClassHook.m in Sources */,
 				2C37FC421ACBFC3B0010EFBF /* RBChatTimeFormateTool.m in Sources */,
 				2C39751D1ACF8B11000B01D7 /* RBSegmentedControl.m in Sources */,
 				2CBE2C621ACBD3000036FEF2 /* main.m in Sources */,

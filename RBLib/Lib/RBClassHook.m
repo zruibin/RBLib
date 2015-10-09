@@ -1,16 +1,18 @@
 //
-//  ClassPrinter.m
+//  RBClassHook.m
 //  RBLib
 //
-//  Created by zhouruibin on 15/9/30.
-//  Copyright © 2015年 zruibin. All rights reserved.
+//  Created by zruibin on 15/10/9.
+//  Copyright © 2015年 RBCHOW. All rights reserved.
 //
 
-#import "ClassPrinter.h"
+#import "RBClassHook.h"
 #import <objc/runtime.h>
 #import "RBMarco.h"
 
-@implementation ClassPrinter
+@implementation RBClassHook
+
+#pragma mark - Printer
 
 - (void)printIvarList
 {
@@ -46,6 +48,3 @@
 }
 
 @end
-
-
-

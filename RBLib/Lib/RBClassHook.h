@@ -1,14 +1,14 @@
 //
-//  ClassPrinter.h
+//  RBClassHook.h
 //  RBLib
 //
-//  Created by zhouruibin on 15/9/30.
-//  Copyright © 2015年 zruibin. All rights reserved.
+//  Created by zruibin on 15/10/9.
+//  Copyright © 2015年 RBCHOW. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface ClassPrinter : NSObject
+@interface RBClassHook : NSObject
 
 @property (nonatomic, strong) Class classer;
 

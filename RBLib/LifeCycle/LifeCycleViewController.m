@@ -10,7 +10,7 @@
 #import "LifeCycleView.h"
 #import "RBMarco.h"
 #import <Masonry/Masonry.h>
-#import "ClassPrinter.h"
+#import "RBClassHook.h"
 
 @interface LifeCycleViewController ()
 
@@ -104,11 +104,11 @@
     
     [self layoutPageSubviews];
     
-    ClassPrinter *classPrinter = [[ClassPrinter alloc] init];
-    classPrinter.classer = [UIViewController class];
-    [classPrinter printIvarList];
-    [classPrinter printPropertyList];
-    [classPrinter printMethodList];
+    RBClassHook *classHook = [[RBClassHook alloc] init];
+    classHook.classer = [UIViewController class];
+    [classHook printIvarList];
+    [classHook printPropertyList];
+    [classHook printMethodList];
 }
 
 - (void)didReceiveMemoryWarning {
