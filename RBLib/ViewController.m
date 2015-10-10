@@ -16,6 +16,7 @@
 #import "LifeCycle/LifeCycleViewController.h"
 
 #import <pop/POP.h>
+#import "ViewController+Test.h"
 
 
 @interface ViewController ()
@@ -39,6 +40,7 @@
     DLog(@"time1970:%@", time1970Str);
     DLog(@"timeNow:%@", timeNowStr);
     
+    [self testAssociatedObject];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -13,6 +13,7 @@
 		2C39751D1ACF8B11000B01D7 /* RBSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C39751C1ACF8B11000B01D7 /* RBSegmentedControl.m */; };
 		2C3B5F9A1AF8B60300A424DA /* LifeCycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B5F981AF8B60300A424DA /* LifeCycleViewController.m */; };
 		2C3B5F9B1AF8B60300A424DA /* LifeCycleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3B5F991AF8B60300A424DA /* LifeCycleViewController.xib */; };
+		2C404D171BC951E700FBCBE7 /* ViewController+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C404D161BC951E700FBCBE7 /* ViewController+Test.m */; settings = {ASSET_TAGS = (); }; };
 		2C4BD75D1B031FED00CB291F /* RBShowImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4BD75B1B031FED00CB291F /* RBShowImageView.m */; };
 		2C8474611AF7505C00194D2F /* libPods-pop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84745D1AF7505C00194D2F /* libPods-pop.a */; };
 		2C8474621AF7505C00194D2F /* libPods-SDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84745E1AF7505C00194D2F /* libPods-SDWebImage.a */; };
@@ -59,6 +60,8 @@
 		2C3B5F971AF8B60300A424DA /* LifeCycleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifeCycleViewController.h; sourceTree = "<group>"; };
 		2C3B5F981AF8B60300A424DA /* LifeCycleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifeCycleViewController.m; sourceTree = "<group>"; };
 		2C3B5F991AF8B60300A424DA /* LifeCycleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LifeCycleViewController.xib; sourceTree = "<group>"; };
+		2C404D151BC951E700FBCBE7 /* ViewController+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+Test.h"; sourceTree = "<group>"; };
+		2C404D161BC951E700FBCBE7 /* ViewController+Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+Test.m"; sourceTree = "<group>"; };
 		2C4BD75B1B031FED00CB291F /* RBShowImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBShowImageView.m; sourceTree = "<group>"; };
 		2C4BD75C1B031FED00CB291F /* RBShowImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBShowImageView.h; sourceTree = "<group>"; };
 		2C84745D1AF7505C00194D2F /* libPods-pop.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-pop.a"; path = "Pods/../build/Debug-iphoneos/libPods-pop.a"; sourceTree = "<group>"; };
@@ -187,6 +190,8 @@
 				2CBE2C641ACBD3000036FEF2 /* AppDelegate.m */,
 				2CBE2C661ACBD3000036FEF2 /* ViewController.h */,
 				2CBE2C671ACBD3000036FEF2 /* ViewController.m */,
+				2C404D151BC951E700FBCBE7 /* ViewController+Test.h */,
+				2C404D161BC951E700FBCBE7 /* ViewController+Test.m */,
 				2CBE2C691ACBD3000036FEF2 /* Main.storyboard */,
 				2CBE2C6E1ACBD3000036FEF2 /* LaunchScreen.xib */,
 				2CBE2C5F1ACBD3000036FEF2 /* Supporting Files */,
@@ -415,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CF3E8541AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m in Sources */,
+				2C404D171BC951E700FBCBE7 /* ViewController+Test.m in Sources */,
 				2CF3E8511AE63DA600FE1CC5 /* UINavigationBar+Gradient.m in Sources */,
 				2CBE2C681ACBD3000036FEF2 /* ViewController.m in Sources */,
 				2C13F49B1B5F64F90078BA2B /* RBUtil.m in Sources */,

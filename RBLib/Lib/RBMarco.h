@@ -13,7 +13,7 @@
 #ifdef	_DEBUG
 
 //#define DLog(...);	NSLog(__VA_ARGS__);
-#define	DLog(FORMAT, ...) fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#define	DLog(FORMAT, ...) fprintf(stderr,"[%s:%d]\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 #define DLogMethod()	 DLog(@"[%s] %@", class_getName([self class]), NSStringFromSelector(_cmd));
 #define DLogPoint(point) DLog(@"%f,%f", point.x, point.y);
 #define DLogSize(size)   DLog(@"%f,%f", size.width, size.height);
@@ -131,5 +131,31 @@ if(nil != (x)) \
 
 #define DistanceFloat(PointA,PointB) sqrtf((PointA.x - PointB.x) * (PointA.x - PointB.x) + (PointA.y - PointB.y) * (PointA.y - PointB.y))
 
+#pragma mark --- 用宏在category里给对象添加属性
+
+#define _PROPERTY_ASSOCIATEDOBJECT( __type, __name)  \
+            @property (nonatomic, strong, setter=set__##__name:, getter=__##__name) __type __name;
+
+//在申明属性的时候用setter来修改属性的set方法,在前面加 __ 避开大小写.
+#define _MAKE_ASSOCIATEDOBJECT( __type, __name)  \
+            @dynamic __name;  \
+             \
+            - (__type)__##__name   \
+            {   \
+                const char * propName = #__name; \
+                __type name = objc_getAssociatedObject(self, propName);    \
+                return name; \
+            }   \
+            \
+            - (void)set__##__name:(__type)__name   \
+            { \
+                const char * propName = #__name;    \
+                objc_setAssociatedObject(self, propName, __name, OBJC_ASSOCIATION_RETAIN_NONATOMIC); \
+            }
 
 #endif
+
+
+
+
+
