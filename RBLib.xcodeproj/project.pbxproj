@@ -15,6 +15,7 @@
 		2C3B5F9B1AF8B60300A424DA /* LifeCycleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C3B5F991AF8B60300A424DA /* LifeCycleViewController.xib */; };
 		2C404D171BC951E700FBCBE7 /* ViewController+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C404D161BC951E700FBCBE7 /* ViewController+Test.m */; settings = {ASSET_TAGS = (); }; };
 		2C4BD75D1B031FED00CB291F /* RBShowImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4BD75B1B031FED00CB291F /* RBShowImageView.m */; };
+		2C4DA4441BCA1CD900BE8AAD /* DispatchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4DA4431BCA1CD900BE8AAD /* DispatchController.m */; settings = {ASSET_TAGS = (); }; };
 		2C8474611AF7505C00194D2F /* libPods-pop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84745D1AF7505C00194D2F /* libPods-pop.a */; };
 		2C8474621AF7505C00194D2F /* libPods-SDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84745E1AF7505C00194D2F /* libPods-SDWebImage.a */; };
 		2C8474631AF7505C00194D2F /* libPods-UIActivityIndicator-for-SDWebImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84745F1AF7505C00194D2F /* libPods-UIActivityIndicator-for-SDWebImage.a */; };
@@ -64,6 +65,8 @@
 		2C404D161BC951E700FBCBE7 /* ViewController+Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+Test.m"; sourceTree = "<group>"; };
 		2C4BD75B1B031FED00CB291F /* RBShowImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBShowImageView.m; sourceTree = "<group>"; };
 		2C4BD75C1B031FED00CB291F /* RBShowImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBShowImageView.h; sourceTree = "<group>"; };
+		2C4DA4421BCA1CD900BE8AAD /* DispatchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchController.h; sourceTree = "<group>"; };
+		2C4DA4431BCA1CD900BE8AAD /* DispatchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchController.m; sourceTree = "<group>"; };
 		2C84745D1AF7505C00194D2F /* libPods-pop.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-pop.a"; path = "Pods/../build/Debug-iphoneos/libPods-pop.a"; sourceTree = "<group>"; };
 		2C84745E1AF7505C00194D2F /* libPods-SDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-SDWebImage.a"; path = "Pods/../build/Debug-iphoneos/libPods-SDWebImage.a"; sourceTree = "<group>"; };
 		2C84745F1AF7505C00194D2F /* libPods-UIActivityIndicator-for-SDWebImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-UIActivityIndicator-for-SDWebImage.a"; path = "Pods/../build/Debug-iphoneos/libPods-UIActivityIndicator-for-SDWebImage.a"; sourceTree = "<group>"; };
@@ -156,6 +159,15 @@
 			path = LifeCycle;
 			sourceTree = "<group>";
 		};
+		2C4DA43E1BCA1C4E00BE8AAD /* Dispatch */ = {
+			isa = PBXGroup;
+			children = (
+				2C4DA4421BCA1CD900BE8AAD /* DispatchController.h */,
+				2C4DA4431BCA1CD900BE8AAD /* DispatchController.m */,
+			);
+			path = Dispatch;
+			sourceTree = "<group>";
+		};
 		2CBE2C531ACBD2FF0036FEF2 = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				2CBE2C891ACBD54E0036FEF2 /* Lib */,
+				2C4DA43E1BCA1C4E00BE8AAD /* Dispatch */,
 				2C3B5F961AF8B5B800A424DA /* LifeCycle */,
 				2CF3E8521AE63DEE00FE1CC5 /* ScrollHiddenBarVC.h */,
 				2CF3E8531AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m */,
@@ -432,6 +445,7 @@
 				510F27FD1BC77FB30035D26A /* RBClassHook.m in Sources */,
 				2C37FC421ACBFC3B0010EFBF /* RBChatTimeFormateTool.m in Sources */,
 				2C39751D1ACF8B11000B01D7 /* RBSegmentedControl.m in Sources */,
+				2C4DA4441BCA1CD900BE8AAD /* DispatchController.m in Sources */,
 				2CBE2C621ACBD3000036FEF2 /* main.m in Sources */,
 				512DFE5F1B8DB3D6004B4B13 /* UIImage+Tint.m in Sources */,
 				2C4BD75D1B031FED00CB291F /* RBShowImageView.m in Sources */,
