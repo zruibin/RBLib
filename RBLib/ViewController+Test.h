@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "RBMarco.h"
+#import "RBMacros.h"
 
 @interface ViewController (Test)
 

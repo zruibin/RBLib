@@ -8,7 +8,7 @@
 
 #import "LifeCycleViewController.h"
 #import "LifeCycleView.h"
-#import "RBMarco.h"
+#import "RBMacros.h"
 #import <Masonry/Masonry.h>
 #import "RBClassHook.h"
 

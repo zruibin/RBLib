@@ -7,7 +7,7 @@
 //
 
 #import "ScrollHiddenBarVC.h"
-#import "RBMarco.h"
+#import "RBMacros.h"
 #import "UINavigationBar+Gradient.h"
 
 

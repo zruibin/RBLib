@@ -86,7 +86,7 @@
 		2CBE2C7B1ACBD3000036FEF2 /* RBLibTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RBLibTests.m; sourceTree = "<group>"; };
 		2CBE2C851ACBD3B10036FEF2 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		2CBE2C861ACBD3B10036FEF2 /* RBLib.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RBLib.podspec; sourceTree = "<group>"; };
-		2CBE2C8A1ACBD63E0036FEF2 /* RBMarco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBMarco.h; sourceTree = "<group>"; };
+		2CBE2C8A1ACBD63E0036FEF2 /* RBMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBMacros.h; sourceTree = "<group>"; };
 		2CBE2C8B1ACBDB990036FEF2 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		2CBE2C8C1ACBDB990036FEF2 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		2CD693111ADE516D003C5927 /* APRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APRoundButton.h; sourceTree = "<group>"; };
@@ -249,7 +249,7 @@
 				2CE8E3BE1ADD140C00C30B24 /* UIImage+CircleRadius.h */,
 				2CE8E3BF1ADD140C00C30B24 /* UIImage+CircleRadius.m */,
 				2C39751A1ACF8B11000B01D7 /* RBSegmentedControl */,
-				2CBE2C8A1ACBD63E0036FEF2 /* RBMarco.h */,
+				2CBE2C8A1ACBD63E0036FEF2 /* RBMacros.h */,
 				2CBE2C8B1ACBDB990036FEF2 /* UncaughtExceptionHandler.h */,
 				2CBE2C8C1ACBDB990036FEF2 /* UncaughtExceptionHandler.m */,
 				2C37FC401ACBFC3B0010EFBF /* RBChatTimeFormateTool.h */,

@@ -1,13 +1,13 @@
 //
-//  RBMarco.h
+//  RBMacros.h
 //  RBLib
 //
 //  Created by zruibin on 15/4/1.
 //  Copyright (c) 2015年 zruibin. All rights reserved.
 //
 
-#ifndef RBLib_RBMarco_h
-#define RBLib_RBMarco_h
+#ifndef RBLib_RBMacros_h
+#define RBLib_RBMacros_h
 
 #define _DEBUG 1
 #ifdef	_DEBUG

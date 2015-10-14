@@ -8,7 +8,7 @@
 
 #import "RBClassHook.h"
 #import <objc/runtime.h>
-#import "RBMarco.h"
+#import "RBMacros.h"
 
 @implementation RBClassHook
 
