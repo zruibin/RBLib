@@ -10,15 +10,17 @@
 
 @implementation ViewController (Test)
 
-_MAKE_ASSOCIATEDOBJECT(NSString*, age);
-_MAKE_ASSOCIATEDOBJECT(NSString*, test);
+_MAKE_ASSOCIATEDOBJECT(NSString*, age, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+_MAKE_ASSOCIATEDOBJECT(NSString*, test, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+_MAKE_ASSOCIATEDOBJECT(NSNumber *, num, OBJC_ASSOCIATION_ASSIGN);
 
 - (void)testAssociatedObject
 {
     DLog(@"testAssociatedObject....");
     self.age = @"89...";
     self.test = @"test";
-    DLog(@"AssociatedObject:%@-%@-%@", self.age, self.test, self.age);
+    self.num = [NSNumber numberWithInt:22];
+    DLog(@"AssociatedObject:%@-%@-%@", self.age, self.test, self.num);
 }
 
 @end

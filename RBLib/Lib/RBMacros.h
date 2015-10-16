@@ -133,13 +133,15 @@ if(nil != (x)) \
 
 #pragma mark --- 用宏在category里给对象添加属性
 
-#define _PROPERTY_ASSOCIATEDOBJECT( __type, __name)  \
-            @property (nonatomic, strong, setter=set__##__name:, getter=__##__name) __type __name;
+// eg: _PROPERTY_ASSOCIATEDOBJECT(UIButton *, downloadBtn, strong);
+#define _PROPERTY_ASSOCIATEDOBJECT( __type, __name, __association_type)  \
+            @property (nonatomic, __association_type, setter=set__##__name:, getter=__##__name) __type __name;
 
 //在申明属性的时候用setter来修改属性的set方法,在前面加 __ 避开大小写.
-#define _MAKE_ASSOCIATEDOBJECT( __type, __name)  \
+// eg: _MAKE_ASSOCIATEDOBJECT(UIButton *, downloadBtn, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+#define _MAKE_ASSOCIATEDOBJECT( __type, __name, __association_type)  \
             @dynamic __name;  \
-             \
+            \
             - (__type)__##__name   \
             {   \
                 const char * propName = #__name; \
@@ -150,8 +152,9 @@ if(nil != (x)) \
             - (void)set__##__name:(__type)__name   \
             { \
                 const char * propName = #__name;    \
-                objc_setAssociatedObject(self, propName, __name, OBJC_ASSOCIATION_RETAIN_NONATOMIC); \
+                objc_setAssociatedObject(self, propName, __name, __association_type); \
             }
+
 
 #endif
 

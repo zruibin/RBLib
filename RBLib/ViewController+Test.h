@@ -11,8 +11,9 @@
 
 @interface ViewController (Test)
 
-_PROPERTY_ASSOCIATEDOBJECT(NSString*, age);
-_PROPERTY_ASSOCIATEDOBJECT(NSString*, test);
+_PROPERTY_ASSOCIATEDOBJECT(NSString*, age, strong);
+_PROPERTY_ASSOCIATEDOBJECT(NSString*, test, strong);
+_PROPERTY_ASSOCIATEDOBJECT(NSNumber *, num, assign);
 
 - (void)testAssociatedObject;
 
