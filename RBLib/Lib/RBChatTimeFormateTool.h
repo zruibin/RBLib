@@ -44,4 +44,14 @@
 
 + (NSString *)stringFrom1970TimeInterval:(NSString *)timeInterval;
 
+/**
+ *  判断是否为当天
+ *
+ *  @param date  新的时间
+ *  @param toDate 旧的时间
+ *
+ *  @return 0 为当天
+ */
++ (NSInteger)daysSinceReferenceDate:(NSDate *)date toDate:(NSDate *)toDate;
+
 @end

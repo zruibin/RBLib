@@ -161,4 +161,21 @@
     return nil;
 }
 
++ (NSInteger)daysSinceReferenceDate:(NSDate *)date toDate:(NSDate *)toDate
+{
+    if (date == nil) {
+        return NSNotFound;
+    }
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    [calendar setTimeZone:[NSTimeZone localTimeZone]];
+    unsigned int unitFlag = NSDayCalendarUnit;
+    
+    NSDateComponents *components = [calendar components:unitFlag fromDate:[NSDate dateWithTimeIntervalSince1970:0] toDate:date options:0];
+    NSInteger newDayCount = [components day];
+    components = [calendar components:unitFlag fromDate:[NSDate dateWithTimeIntervalSince1970:0] toDate:toDate options:0];
+    NSInteger oldDayCount = [components day];
+    
+    return oldDayCount - newDayCount;
+}
+
 @end
