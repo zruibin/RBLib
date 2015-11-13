@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "UncaughtExceptionHandler.h"
+#import "UIImage+Hook.h"
 
 @interface AppDelegate ()
 
@@ -27,6 +28,8 @@
 //    self.window.rootViewController = nav;
 //    
 //    [self.window makeKeyAndVisible];
+    
+    [UIImage initialize];
 
     return YES;
 }

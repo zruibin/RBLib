@@ -13,7 +13,7 @@
 
 _PROPERTY_ASSOCIATEDOBJECT(NSString*, age, strong);
 _PROPERTY_ASSOCIATEDOBJECT(NSString*, test, strong);
-_PROPERTY_ASSOCIATEDOBJECT(NSNumber *, num, assign);
+_PROPERTY_ASSOCIATEDOBJECT(NSNumber*, num, strong);
 
 - (void)testAssociatedObject;
 
