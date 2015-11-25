@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "UncaughtExceptionHandler.h"
 #import "UIImage+Hook.h"
+#import "RBPerformanceMonitor.h"
 
 @interface AppDelegate ()
 
@@ -30,7 +31,7 @@
 //    [self.window makeKeyAndVisible];
     
     [UIImage initialize];
-
+    [[RBPerformanceMonitor sharedInstance] start];
     return YES;
 }
 

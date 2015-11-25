@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F759023E6AE77EEE87088F46E333BABAF9696A55",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "151a885f-3fcc-f34a-a0f5-f20a7b2803b9++1274" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F759023E6AE77EEE87088F46E333BABAF9696A55" : 0,
+    "151a885f-3fcc-f34a-a0f5-f20a7b2803b9++1274" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BCF4424C-BDEC-4B7E-88D0-15542B9F22B9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F759023E6AE77EEE87088F46E333BABAF9696A55" : "RBLib",
+    "151a885f-3fcc-f34a-a0f5-f20a7b2803b9++1274" : "RBLib\/RBLib\/Lib\/RBPerformanceMonitor\/CrashReporter.framework\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "RBLib",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "RBLib.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/tc-svn.tencent.com\/tr\/tr_qqmaster_rep",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "151a885f-3fcc-f34a-a0f5-f20a7b2803b9++1274"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.oschina.net\/zruibin\/RBLib.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F759023E6AE77EEE87088F46E333BABAF9696A55"
+    }
+  ]
+}

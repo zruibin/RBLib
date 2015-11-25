@@ -9,8 +9,7 @@
 #ifndef RBLib_RBMacros_h
 #define RBLib_RBMacros_h
 
-#define _DEBUG 1
-#ifdef	_DEBUG
+#ifdef	DEBUG
 
 //#define DLog(...);	NSLog(__VA_ARGS__);
 #define	DLog(FORMAT, ...) fprintf(stderr,"[%s:%d]\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
