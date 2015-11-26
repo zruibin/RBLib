@@ -16,7 +16,13 @@
     DLog(@"view init...");
     self = [super init];
     if (self) {
-        
+        CALayer *layer=[[CALayer alloc]init];
+        layer.bounds=CGRectMake(0, 0, 185, 185);
+        layer.position=CGPointMake(160,284);
+        layer.backgroundColor=[UIColor colorWithRed:0 green:146/255.0 blue:1.0 alpha:1.0].CGColor;
+        //显示图层
+//        [layer setNeedsDisplay];
+        [self.layer addSublayer:layer];
     }
     return self;
 }
@@ -40,7 +46,16 @@
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
+    [super drawRect:rect];
     DLog(@"view drawRect...");
+    DLog(@"CGContext:%@",UIGraphicsGetCurrentContext());
+}
+
+- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx
+{
+    [super drawLayer:layer inContext:ctx];
+    DLog(@"view drawLayer - inContext...");
+    DLog(@"CGContext:%@",ctx);
 }
 
 - (void)layoutSublayersOfLayer:(CALayer *)layer
