@@ -39,6 +39,7 @@
 		512DFE5F1B8DB3D6004B4B13 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 512DFE5E1B8DB3D6004B4B13 /* UIImage+Tint.m */; };
 		51437F141C05B83900DD3F0B /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51437F111C05B83900DD3F0B /* CrashReporter.framework */; };
 		51437F151C05B83900DD3F0B /* RBPerformanceMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 51437F131C05B83900DD3F0B /* RBPerformanceMonitor.m */; };
+		519BCD2D1C084A3900B6CF8A /* UIView+Material.m in Sources */ = {isa = PBXBuildFile; fileRef = 519BCD2C1C084A3900B6CF8A /* UIView+Material.m */; };
 		E9FF1B3C26FC9E49C0BC6FD5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 722091F74D5DD9D641EC4AA3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +110,8 @@
 		51437F111C05B83900DD3F0B /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CrashReporter.framework; sourceTree = "<group>"; };
 		51437F121C05B83900DD3F0B /* RBPerformanceMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBPerformanceMonitor.h; sourceTree = "<group>"; };
 		51437F131C05B83900DD3F0B /* RBPerformanceMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBPerformanceMonitor.m; sourceTree = "<group>"; };
+		519BCD2B1C084A3900B6CF8A /* UIView+Material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Material.h"; sourceTree = "<group>"; };
+		519BCD2C1C084A3900B6CF8A /* UIView+Material.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Material.m"; sourceTree = "<group>"; };
 		664228D96C57C7F31603BC6D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		722091F74D5DD9D641EC4AA3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B03E503867321FF2118BEA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -250,6 +253,7 @@
 		2CBE2C891ACBD54E0036FEF2 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				519BCD2A1C084A3900B6CF8A /* Material */,
 				51437F101C05B83900DD3F0B /* RBPerformanceMonitor */,
 				2C4BD75C1B031FED00CB291F /* RBShowImageView.h */,
 				2C4BD75B1B031FED00CB291F /* RBShowImageView.m */,
@@ -309,6 +313,15 @@
 				51437F131C05B83900DD3F0B /* RBPerformanceMonitor.m */,
 			);
 			path = RBPerformanceMonitor;
+			sourceTree = "<group>";
+		};
+		519BCD2A1C084A3900B6CF8A /* Material */ = {
+			isa = PBXGroup;
+			children = (
+				519BCD2B1C084A3900B6CF8A /* UIView+Material.h */,
+				519BCD2C1C084A3900B6CF8A /* UIView+Material.m */,
+			);
+			path = Material;
 			sourceTree = "<group>";
 		};
 		6C813DD4121C775F6518B192 /* Frameworks */ = {
@@ -473,6 +486,7 @@
 				2CE8E3C01ADD140C00C30B24 /* UIImage+CircleRadius.m in Sources */,
 				2CBE2C8D1ACBDB990036FEF2 /* UncaughtExceptionHandler.m in Sources */,
 				2CBE2C651ACBD3000036FEF2 /* AppDelegate.m in Sources */,
+				519BCD2D1C084A3900B6CF8A /* UIView+Material.m in Sources */,
 				510F27FD1BC77FB30035D26A /* RBClassHook.m in Sources */,
 				2C37FC421ACBFC3B0010EFBF /* RBChatTimeFormateTool.m in Sources */,
 				2C39751D1ACF8B11000B01D7 /* RBSegmentedControl.m in Sources */,
