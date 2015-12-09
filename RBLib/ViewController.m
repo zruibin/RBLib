@@ -18,8 +18,10 @@
 #import <pop/POP.h>
 #import "ViewController+Test.h"
 
+#import "TransitionAnimator.h"
 
-@interface ViewController ()
+
+@interface ViewController () <UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet APRoundButton *popAnimation;
 
@@ -41,6 +43,8 @@
     DLog(@"timeNow:%@", timeNowStr);
     
     [self testAssociatedObject];
+    
+    self.navigationController.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,6 +86,20 @@
     va_end(list);//关闭列表指针
 }
 
+#pragma mark - UINavigationControllerDelegate iOS7新增的2个方法
+// 动画特效
+- (id<UIViewControllerAnimatedTransitioning>) navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
+{
+    TransitionAnimator *animator = [[TransitionAnimator alloc] init];
+    animator.operation = operation;
+    if (operation == UINavigationControllerOperationPush) {
+        return animator;
+    } else if (operation == UINavigationControllerOperationPop) {
+        return animator;
+    } else{
+        return nil;
+    }
+}
 
 @end
 

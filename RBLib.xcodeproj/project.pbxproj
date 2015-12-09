@@ -35,6 +35,7 @@
 		2CF3E8511AE63DA600FE1CC5 /* UINavigationBar+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3E8501AE63DA600FE1CC5 /* UINavigationBar+Gradient.m */; };
 		2CF3E8541AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3E8531AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m */; };
 		510F27FD1BC77FB30035D26A /* RBClassHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 510F27FC1BC77FB30035D26A /* RBClassHook.m */; };
+		51131E711C17D41E00076D13 /* TransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 51131E701C17D41E00076D13 /* TransitionAnimator.m */; };
 		511F9B881BF587FB00F05E17 /* UIImage+Hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 511F9B871BF587FB00F05E17 /* UIImage+Hook.m */; };
 		512DFE5F1B8DB3D6004B4B13 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 512DFE5E1B8DB3D6004B4B13 /* UIImage+Tint.m */; };
 		51437F141C05B83900DD3F0B /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51437F111C05B83900DD3F0B /* CrashReporter.framework */; };
@@ -103,6 +104,8 @@
 		2CF3E8531AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollHiddenBarVC.m; sourceTree = "<group>"; };
 		510F27FB1BC77FB30035D26A /* RBClassHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBClassHook.h; sourceTree = "<group>"; };
 		510F27FC1BC77FB30035D26A /* RBClassHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBClassHook.m; sourceTree = "<group>"; };
+		51131E6F1C17D41E00076D13 /* TransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionAnimator.h; sourceTree = "<group>"; };
+		51131E701C17D41E00076D13 /* TransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimator.m; sourceTree = "<group>"; };
 		511F9B861BF587FB00F05E17 /* UIImage+Hook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Hook.h"; sourceTree = "<group>"; };
 		511F9B871BF587FB00F05E17 /* UIImage+Hook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Hook.m"; sourceTree = "<group>"; };
 		512DFE5D1B8DB3D6004B4B13 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
@@ -208,6 +211,8 @@
 				2CBE2C891ACBD54E0036FEF2 /* Lib */,
 				2C4DA43E1BCA1C4E00BE8AAD /* Dispatch */,
 				2C3B5F961AF8B5B800A424DA /* LifeCycle */,
+				51131E6F1C17D41E00076D13 /* TransitionAnimator.h */,
+				51131E701C17D41E00076D13 /* TransitionAnimator.m */,
 				2CF3E8521AE63DEE00FE1CC5 /* ScrollHiddenBarVC.h */,
 				2CF3E8531AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m */,
 				2CBE2C6C1ACBD3000036FEF2 /* Images.xcassets */,
@@ -484,6 +489,7 @@
 				2C34968E1AFCA274005F377D /* LifeCycleView.m in Sources */,
 				2C3B5F9A1AF8B60300A424DA /* LifeCycleViewController.m in Sources */,
 				2CE8E3C01ADD140C00C30B24 /* UIImage+CircleRadius.m in Sources */,
+				51131E711C17D41E00076D13 /* TransitionAnimator.m in Sources */,
 				2CBE2C8D1ACBDB990036FEF2 /* UncaughtExceptionHandler.m in Sources */,
 				2CBE2C651ACBD3000036FEF2 /* AppDelegate.m in Sources */,
 				519BCD2D1C084A3900B6CF8A /* UIView+Material.m in Sources */,
