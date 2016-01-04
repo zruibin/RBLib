@@ -155,6 +155,20 @@ if(nil != (x)) \
             }
 
 
+/*
+ // 宏定义之前的用法
+ if (completionBlock)
+ {
+    completionBlock(arg1, arg2);
+ }
+
+// 宏定义之后的用法
+BLOCK_EXEC(completionBlock, arg1, arg2);
+ */
+#define BLOCK_EXEC(block, ...) if (block) { block(__VA_ARGS__); };
+
+
+
 #endif
 
 
