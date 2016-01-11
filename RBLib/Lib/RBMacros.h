@@ -162,11 +162,12 @@ if(nil != (x)) \
     completionBlock(arg1, arg2);
  }
 
-// 宏定义之后的用法
+// 宏定义之后的用
 BLOCK_EXEC(completionBlock, arg1, arg2);
  */
 #define BLOCK_EXEC(block, ...) if (block) { block(__VA_ARGS__); };
 
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 
 #endif
