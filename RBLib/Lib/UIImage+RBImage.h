@@ -21,8 +21,10 @@
 - (UIImage *)imageRotatedByRadians:(CGFloat)radians;
 - (UIImage *)imageRotatedByDegrees:(CGFloat)degrees;
 
-- (UIImage *) imageWithTintColor:(UIColor *)tintColor;
-- (UIImage *) imageWithGradientTintColor:(UIColor *)tintColor;
+- (UIImage *)imageWithTintColor:(UIColor *)tintColor;
+- (UIImage *)imageWithGradientTintColor:(UIColor *)tintColor;
+
++ (UIImage*)createImageWithColor:(UIColor*)color;
 
 - (UIImage *)blurFilterImage;
 - (UIImage *)blurFilterImageWithInputRadius:(CGFloat)inputRadius;
