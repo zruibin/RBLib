@@ -31,13 +31,12 @@
 		2CBE2C881ACBD3B10036FEF2 /* RBLib.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 2CBE2C861ACBD3B10036FEF2 /* RBLib.podspec */; };
 		2CBE2C8D1ACBDB990036FEF2 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE2C8C1ACBDB990036FEF2 /* UncaughtExceptionHandler.m */; };
 		2CD693131ADE516D003C5927 /* APRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD693121ADE516D003C5927 /* APRoundButton.m */; };
-		2CE8E3C01ADD140C00C30B24 /* UIImage+CircleRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE8E3BF1ADD140C00C30B24 /* UIImage+CircleRadius.m */; };
 		2CF3E8511AE63DA600FE1CC5 /* UINavigationBar+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3E8501AE63DA600FE1CC5 /* UINavigationBar+Gradient.m */; };
 		2CF3E8541AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3E8531AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m */; };
 		510F27FD1BC77FB30035D26A /* RBClassHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 510F27FC1BC77FB30035D26A /* RBClassHook.m */; };
 		51131E711C17D41E00076D13 /* TransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 51131E701C17D41E00076D13 /* TransitionAnimator.m */; };
 		511F9B881BF587FB00F05E17 /* UIImage+Hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 511F9B871BF587FB00F05E17 /* UIImage+Hook.m */; };
-		512DFE5F1B8DB3D6004B4B13 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 512DFE5E1B8DB3D6004B4B13 /* UIImage+Tint.m */; };
+		512EA4061C44E6C300B61DC5 /* UIImage+RBImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 512EA4051C44E6C300B61DC5 /* UIImage+RBImage.m */; };
 		51437F141C05B83900DD3F0B /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51437F111C05B83900DD3F0B /* CrashReporter.framework */; };
 		51437F151C05B83900DD3F0B /* RBPerformanceMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 51437F131C05B83900DD3F0B /* RBPerformanceMonitor.m */; };
 		519BCD2D1C084A3900B6CF8A /* UIView+Material.m in Sources */ = {isa = PBXBuildFile; fileRef = 519BCD2C1C084A3900B6CF8A /* UIView+Material.m */; };
@@ -96,8 +95,6 @@
 		2CBE2C8C1ACBDB990036FEF2 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		2CD693111ADE516D003C5927 /* APRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APRoundButton.h; sourceTree = "<group>"; };
 		2CD693121ADE516D003C5927 /* APRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APRoundButton.m; sourceTree = "<group>"; };
-		2CE8E3BE1ADD140C00C30B24 /* UIImage+CircleRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CircleRadius.h"; sourceTree = "<group>"; };
-		2CE8E3BF1ADD140C00C30B24 /* UIImage+CircleRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CircleRadius.m"; sourceTree = "<group>"; };
 		2CF3E84F1AE63DA600FE1CC5 /* UINavigationBar+Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Gradient.h"; sourceTree = "<group>"; };
 		2CF3E8501AE63DA600FE1CC5 /* UINavigationBar+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Gradient.m"; sourceTree = "<group>"; };
 		2CF3E8521AE63DEE00FE1CC5 /* ScrollHiddenBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollHiddenBarVC.h; sourceTree = "<group>"; };
@@ -108,8 +105,8 @@
 		51131E701C17D41E00076D13 /* TransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimator.m; sourceTree = "<group>"; };
 		511F9B861BF587FB00F05E17 /* UIImage+Hook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Hook.h"; sourceTree = "<group>"; };
 		511F9B871BF587FB00F05E17 /* UIImage+Hook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Hook.m"; sourceTree = "<group>"; };
-		512DFE5D1B8DB3D6004B4B13 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
-		512DFE5E1B8DB3D6004B4B13 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
+		512EA4041C44E6C300B61DC5 /* UIImage+RBImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RBImage.h"; sourceTree = "<group>"; };
+		512EA4051C44E6C300B61DC5 /* UIImage+RBImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RBImage.m"; sourceTree = "<group>"; };
 		51437F111C05B83900DD3F0B /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CrashReporter.framework; sourceTree = "<group>"; };
 		51437F121C05B83900DD3F0B /* RBPerformanceMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBPerformanceMonitor.h; sourceTree = "<group>"; };
 		51437F131C05B83900DD3F0B /* RBPerformanceMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBPerformanceMonitor.m; sourceTree = "<group>"; };
@@ -265,8 +262,6 @@
 				2CF3E84E1AE63DA500FE1CC5 /* UINavigationBar+Gradient */,
 				2CD693111ADE516D003C5927 /* APRoundButton.h */,
 				2CD693121ADE516D003C5927 /* APRoundButton.m */,
-				2CE8E3BE1ADD140C00C30B24 /* UIImage+CircleRadius.h */,
-				2CE8E3BF1ADD140C00C30B24 /* UIImage+CircleRadius.m */,
 				2C39751A1ACF8B11000B01D7 /* RBSegmentedControl */,
 				2CBE2C8A1ACBD63E0036FEF2 /* RBMacros.h */,
 				2CBE2C8B1ACBDB990036FEF2 /* UncaughtExceptionHandler.h */,
@@ -276,9 +271,10 @@
 				2C13F4991B5F64F90078BA2B /* RBUtil.h */,
 				2C13F49A1B5F64F90078BA2B /* RBUtil.m */,
 				511F9B851BF587DA00F05E17 /* ImageHook */,
-				512DFE5C1B8DB3D6004B4B13 /* ImageBlend */,
 				510F27FB1BC77FB30035D26A /* RBClassHook.h */,
 				510F27FC1BC77FB30035D26A /* RBClassHook.m */,
+				512EA4041C44E6C300B61DC5 /* UIImage+RBImage.h */,
+				512EA4051C44E6C300B61DC5 /* UIImage+RBImage.m */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -299,15 +295,6 @@
 				511F9B871BF587FB00F05E17 /* UIImage+Hook.m */,
 			);
 			path = ImageHook;
-			sourceTree = "<group>";
-		};
-		512DFE5C1B8DB3D6004B4B13 /* ImageBlend */ = {
-			isa = PBXGroup;
-			children = (
-				512DFE5D1B8DB3D6004B4B13 /* UIImage+Tint.h */,
-				512DFE5E1B8DB3D6004B4B13 /* UIImage+Tint.m */,
-			);
-			path = ImageBlend;
 			sourceTree = "<group>";
 		};
 		51437F101C05B83900DD3F0B /* RBPerformanceMonitor */ = {
@@ -488,7 +475,6 @@
 				511F9B881BF587FB00F05E17 /* UIImage+Hook.m in Sources */,
 				2C34968E1AFCA274005F377D /* LifeCycleView.m in Sources */,
 				2C3B5F9A1AF8B60300A424DA /* LifeCycleViewController.m in Sources */,
-				2CE8E3C01ADD140C00C30B24 /* UIImage+CircleRadius.m in Sources */,
 				51131E711C17D41E00076D13 /* TransitionAnimator.m in Sources */,
 				2CBE2C8D1ACBDB990036FEF2 /* UncaughtExceptionHandler.m in Sources */,
 				2CBE2C651ACBD3000036FEF2 /* AppDelegate.m in Sources */,
@@ -498,7 +484,7 @@
 				2C39751D1ACF8B11000B01D7 /* RBSegmentedControl.m in Sources */,
 				2C4DA4441BCA1CD900BE8AAD /* DispatchController.m in Sources */,
 				2CBE2C621ACBD3000036FEF2 /* main.m in Sources */,
-				512DFE5F1B8DB3D6004B4B13 /* UIImage+Tint.m in Sources */,
+				512EA4061C44E6C300B61DC5 /* UIImage+RBImage.m in Sources */,
 				2C4BD75D1B031FED00CB291F /* RBShowImageView.m in Sources */,
 				2CD693131ADE516D003C5927 /* APRoundButton.m in Sources */,
 				51437F151C05B83900DD3F0B /* RBPerformanceMonitor.m in Sources */,

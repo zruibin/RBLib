@@ -1,18 +1,18 @@
 //
-//  UIImage+CircleRadius.h
-//  Aipai
+//  UIImage+RBImage.h
+//  RBLib
 //
-//  Created by zruibin on 15/4/14.
-//  Copyright (c) 2015年 www.aipai.com. All rights reserved.
+//  Created by zhouruibin on 16/1/12.
+//  Copyright © 2016年 zruibin. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (CircleRadius)
+@interface UIImage (RBImage)
+
+- (UIImage*)circleImage:(UIImage*)image withParam:(CGFloat) inset;
 
 - (UIImage *)circleCorner;
-
-
 
 - (UIImage *)imageAtRect:(CGRect)rect;
 - (UIImage *)imageByScalingProportionallyToMinimumSize:(CGSize)targetSize;
@@ -20,5 +20,8 @@
 - (UIImage *)imageByScalingToSize:(CGSize)targetSize;
 - (UIImage *)imageRotatedByRadians:(CGFloat)radians;
 - (UIImage *)imageRotatedByDegrees:(CGFloat)degrees;
+
+- (UIImage *) imageWithTintColor:(UIColor *)tintColor;
+- (UIImage *) imageWithGradientTintColor:(UIColor *)tintColor;
 
 @end

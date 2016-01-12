@@ -1,20 +1,20 @@
 //
-//  UIImage+CircleRadius.m
-//  Aipai
+//  UIImage+RBImage.m
+//  RBLib
 //
-//  Created by zruibin on 15/4/14.
-//  Copyright (c) 2015年 www.aipai.com. All rights reserved.
+//  Created by zhouruibin on 16/1/12.
+//  Copyright © 2016年 zruibin. All rights reserved.
 //
 
-#import "UIImage+CircleRadius.h"
+#import "UIImage+RBImage.h"
 
 CGFloat DegreesToRadians(CGFloat degrees) {return degrees * M_PI / 180;};
 CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
 
-@implementation UIImage (CircleRadius)
+@implementation UIImage (RBImage)
 
-/*
-- (UIImage*)circleImage:(UIImage*) image withParam:(CGFloat) inset
+
+- (UIImage*)circleImage:(UIImage*)image withParam:(CGFloat) inset
 {
     UIGraphicsBeginImageContext(image.size);
     CGContextRef context =UIGraphicsGetCurrentContext();
@@ -37,8 +37,7 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     
     return newimg;
 }
- 
- */
+
 
 - (UIImage *)circleCorner
 {
@@ -46,16 +45,16 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     CGContextRef context =UIGraphicsGetCurrentContext();
     
     //圆的边框宽度为2，颜色为红色
-//    CGContextSetLineWidth(context,2);
-//    CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
+    //    CGContextSetLineWidth(context,2);
+    //    CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
     CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
     CGContextAddEllipseInRect(context, rect);
     CGContextClip(context);
     
     //在圆区域内画出image原图
     [self drawInRect:rect];
-//    CGContextAddEllipseInRect(context, rect);
-//    CGContextFillPath(context);
+    //    CGContextAddEllipseInRect(context, rect);
+    //    CGContextFillPath(context);
     
     //生成新的image
     UIImage *newimg = UIGraphicsGetImageFromCurrentImageContext();
@@ -196,20 +195,20 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     UIImage *sourceImage = self;
     UIImage *newImage = nil;
     
-//   CGSize imageSize = sourceImage.size;
-//   CGFloat width = imageSize.width;
-//   CGFloat height = imageSize.height;
+    //   CGSize imageSize = sourceImage.size;
+    //   CGFloat width = imageSize.width;
+    //   CGFloat height = imageSize.height;
     
     CGFloat targetWidth = targetSize.width;
     CGFloat targetHeight = targetSize.height;
     
-//   CGFloat scaleFactor = 0.0;
+    //   CGFloat scaleFactor = 0.0;
     CGFloat scaledWidth = targetWidth;
     CGFloat scaledHeight = targetHeight;
     
     CGPoint thumbnailPoint = CGPointMake(0.0,0.0);
     
-// this is actually the interesting part:
+    // this is actually the interesting part:
     
     UIGraphicsBeginImageContext(targetSize);
     
@@ -241,7 +240,7 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     CGAffineTransform t = CGAffineTransformMakeRotation(DegreesToRadians(degrees));
     rotatedViewBox.transform = t;
     CGSize rotatedSize = rotatedViewBox.frame.size;
-//    [rotatedViewBox release];
+    //    [rotatedViewBox release];
     
     // Create the bitmap context
     UIGraphicsBeginImageContext(rotatedSize);
@@ -263,12 +262,35 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     return newImage;
 }
 
-@end;
+- (UIImage *) imageWithTintColor:(UIColor *)tintColor
+{
+    return [self imageWithTintColor:tintColor blendMode:kCGBlendModeDestinationIn];
+}
 
+- (UIImage *) imageWithGradientTintColor:(UIColor *)tintColor
+{
+    return [self imageWithTintColor:tintColor blendMode:kCGBlendModeOverlay];
+}
 
+- (UIImage *) imageWithTintColor:(UIColor *)tintColor blendMode:(CGBlendMode)blendMode
+{
+    //We want to keep alpha, set opaque to NO; Use 0.0f for scale to use the scale factor of the device’s main screen.
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0f);
+    [tintColor setFill];
+    CGRect bounds = CGRectMake(0, 0, self.size.width, self.size.height);
+    UIRectFill(bounds);
+    
+    //Draw the tinted image in context
+    [self drawInRect:bounds blendMode:blendMode alpha:1.0f];
+    
+    if (blendMode != kCGBlendModeDestinationIn) {
+        [self drawInRect:bounds blendMode:kCGBlendModeDestinationIn alpha:1.0f];
+    }
+    
+    UIImage *tintedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return tintedImage;
+}
 
-
-
-
-
-
+@end
