@@ -2,7 +2,7 @@
 //  UIImage+RBImage.h
 //  RBLib
 //
-//  Created by zhouruibin on 16/1/12.
+//  Created by zruibin on 16/1/12.
 //  Copyright © 2016年 zruibin. All rights reserved.
 //
 
@@ -23,5 +23,8 @@
 
 - (UIImage *) imageWithTintColor:(UIColor *)tintColor;
 - (UIImage *) imageWithGradientTintColor:(UIColor *)tintColor;
+
+- (UIImage *)blurFilterImage;
+- (UIImage *)blurFilterImageWithInputRadius:(CGFloat)inputRadius;
 
 @end

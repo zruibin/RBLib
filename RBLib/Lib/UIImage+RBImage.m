@@ -2,7 +2,7 @@
 //  UIImage+RBImage.m
 //  RBLib
 //
-//  Created by zhouruibin on 16/1/12.
+//  Created by zruibin on 16/1/12.
 //  Copyright © 2016年 zruibin. All rights reserved.
 //
 
@@ -291,6 +291,27 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     UIGraphicsEndImageContext();
     
     return tintedImage;
+}
+
+- (UIImage *)blurFilterImage
+{
+    return [self blurFilterImageWithInputRadius:10.0f];
+}
+
+- (UIImage *)blurFilterImageWithInputRadius:(CGFloat)inputRadius
+{
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CIImage *inputImage = [[CIImage alloc] initWithImage:self];
+    // create gaussian blur filter
+    CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur"];
+    [filter setValue:inputImage forKey:kCIInputImageKey];
+    [filter setValue:[NSNumber numberWithFloat:inputRadius] forKey:@"inputRadius"];
+    // blur image
+    CIImage *result = [filter valueForKey:kCIOutputImageKey];
+    CGImageRef cgImage = [context createCGImage: result fromRect:[inputImage extent]];//[context createCGImage:result fromRect:[result extent]];
+    UIImage *image = [UIImage imageWithCGImage:cgImage];
+    CGImageRelease(cgImage);
+    return image;
 }
 
 @end
