@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="EdZ-Uo-nhq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="EdZ-Uo-nhq">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -79,15 +79,29 @@
                                     <segue destination="by4-WO-cUA" kind="push" id="v8o-Zw-vWB"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNX-Ed-RgY">
+                                <rect key="frame" x="26" y="258" width="268" height="40"/>
+                                <color key="backgroundColor" red="0.76078431369999999" green="0.76078431369999999" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="k8I-ei-jFw"/>
+                                </constraints>
+                                <state key="normal" title="Swizzling"/>
+                                <connections>
+                                    <segue destination="BNw-uQ-824" kind="push" id="QcS-Ia-D0v"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="90A-Ng-bLW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="1LY-GQ-Hob"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tNX-Ed-RgY" secondAttribute="trailing" constant="10" id="IaB-gQ-PrE"/>
                             <constraint firstItem="90A-Ng-bLW" firstAttribute="top" secondItem="9fq-z5-GCK" secondAttribute="top" id="Mam-dy-NHl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g6p-bN-aXX" secondAttribute="trailing" constant="50" id="O2L-of-Z1v"/>
                             <constraint firstItem="90A-Ng-bLW" firstAttribute="top" secondItem="g6p-bN-aXX" secondAttribute="bottom" constant="30" id="Xl9-OC-sRY"/>
                             <constraint firstItem="iLV-Rc-ABr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="ZL2-8E-IOQ"/>
                             <constraint firstItem="iLV-Rc-ABr" firstAttribute="top" secondItem="g6p-bN-aXX" secondAttribute="bottom" constant="80" id="cM6-H3-uyx"/>
+                            <constraint firstItem="tNX-Ed-RgY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="gWX-TQ-ZFQ"/>
+                            <constraint firstItem="tNX-Ed-RgY" firstAttribute="top" secondItem="iLV-Rc-ABr" secondAttribute="bottom" constant="8" id="grY-45-Pbc"/>
                             <constraint firstItem="9fq-z5-GCK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="90A-Ng-bLW" secondAttribute="trailing" constant="40" id="hdc-A0-1pb"/>
                             <constraint firstAttribute="trailing" secondItem="9fq-z5-GCK" secondAttribute="trailing" constant="50" id="kVe-QP-0hd"/>
                             <constraint firstItem="9fq-z5-GCK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="90A-Ng-bLW" secondAttribute="trailing" constant="40" id="mwI-Jb-9cU"/>
@@ -247,6 +261,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u60-Op-5yB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="162.66666666666666" y="-318.07999999999998"/>
+        </scene>
+        <!--Method Swizzling-->
+        <scene sceneID="kVz-KB-qzr">
+            <objects>
+                <viewController id="BNw-uQ-824" customClass="SwizzlingController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vzx-iU-VpZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="0jy-Ug-kDk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Iaf-tA-mAf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAR-Iu-ahp">
+                                <rect key="frame" x="10" y="74" width="300" height="40"/>
+                                <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="wCH-3p-rm0"/>
+                                </constraints>
+                                <state key="normal" title="截屏"/>
+                                <connections>
+                                    <action selector="saveScreenAction:" destination="BNw-uQ-824" eventType="touchUpInside" id="j5Q-Xo-P1a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdo-ij-h0l">
+                                <rect key="frame" x="10" y="124" width="300" height="40"/>
+                                <color key="backgroundColor" red="0.98431372549999996" green="0.69803921570000005" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vsj-e1-7xF"/>
+                                </constraints>
+                                <state key="normal" title="Instance Swizzling"/>
+                                <connections>
+                                    <action selector="instanceSwizzlingAction:" destination="BNw-uQ-824" eventType="touchUpInside" id="wdq-Tv-xVf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGW-Xe-kXt">
+                                <rect key="frame" x="10" y="174" width="300" height="40"/>
+                                <color key="backgroundColor" red="0.54117647059999996" green="0.54117647059999996" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="qSz-la-8cF"/>
+                                </constraints>
+                                <state key="normal" title="Class Swizzling"/>
+                                <connections>
+                                    <action selector="classSwizzlingAction:" destination="BNw-uQ-824" eventType="touchUpInside" id="34x-86-kZG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NAR-Iu-ahp" firstAttribute="top" secondItem="vzx-iU-VpZ" secondAttribute="bottom" constant="10" id="3y1-6g-xH3"/>
+                            <constraint firstItem="OGW-Xe-kXt" firstAttribute="leading" secondItem="Iaf-tA-mAf" secondAttribute="leading" constant="10" id="6K7-yY-y8R"/>
+                            <constraint firstItem="qdo-ij-h0l" firstAttribute="leading" secondItem="Iaf-tA-mAf" secondAttribute="leading" constant="10" id="RXm-Gi-Kp0"/>
+                            <constraint firstAttribute="trailing" secondItem="NAR-Iu-ahp" secondAttribute="trailing" constant="10" id="SrL-EI-1zO"/>
+                            <constraint firstItem="qdo-ij-h0l" firstAttribute="top" secondItem="NAR-Iu-ahp" secondAttribute="bottom" constant="10" id="cuy-Oh-Wji"/>
+                            <constraint firstItem="OGW-Xe-kXt" firstAttribute="top" secondItem="qdo-ij-h0l" secondAttribute="bottom" constant="10" id="q1M-mW-kK5"/>
+                            <constraint firstItem="NAR-Iu-ahp" firstAttribute="leading" secondItem="Iaf-tA-mAf" secondAttribute="leading" constant="10" id="tyw-bV-kdQ"/>
+                            <constraint firstAttribute="trailing" secondItem="qdo-ij-h0l" secondAttribute="trailing" constant="10" id="ucM-ZE-zRh"/>
+                            <constraint firstAttribute="trailing" secondItem="OGW-Xe-kXt" secondAttribute="trailing" constant="10" id="vYs-aT-XpF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Method Swizzling" id="DCM-o5-iyQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JBZ-WD-zGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="538" y="423"/>
         </scene>
     </scenes>
 </document>

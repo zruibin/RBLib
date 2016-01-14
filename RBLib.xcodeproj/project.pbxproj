@@ -36,6 +36,8 @@
 		510F27FD1BC77FB30035D26A /* RBClassHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 510F27FC1BC77FB30035D26A /* RBClassHook.m */; };
 		51131E711C17D41E00076D13 /* TransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 51131E701C17D41E00076D13 /* TransitionAnimator.m */; };
 		511F9B881BF587FB00F05E17 /* UIImage+Hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 511F9B871BF587FB00F05E17 /* UIImage+Hook.m */; };
+		5120DA361C474D120023C163 /* SwizzlingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5120DA351C474D120023C163 /* SwizzlingController.m */; };
+		5120DA3A1C4760E40023C163 /* ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5120DA391C4760E40023C163 /* ImageEffects.m */; };
 		512EA4061C44E6C300B61DC5 /* UIImage+RBImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 512EA4051C44E6C300B61DC5 /* UIImage+RBImage.m */; };
 		51437F141C05B83900DD3F0B /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51437F111C05B83900DD3F0B /* CrashReporter.framework */; };
 		51437F151C05B83900DD3F0B /* RBPerformanceMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 51437F131C05B83900DD3F0B /* RBPerformanceMonitor.m */; };
@@ -105,6 +107,10 @@
 		51131E701C17D41E00076D13 /* TransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitionAnimator.m; sourceTree = "<group>"; };
 		511F9B861BF587FB00F05E17 /* UIImage+Hook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Hook.h"; sourceTree = "<group>"; };
 		511F9B871BF587FB00F05E17 /* UIImage+Hook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Hook.m"; sourceTree = "<group>"; };
+		5120DA341C474D120023C163 /* SwizzlingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwizzlingController.h; sourceTree = "<group>"; };
+		5120DA351C474D120023C163 /* SwizzlingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwizzlingController.m; sourceTree = "<group>"; };
+		5120DA381C4760E40023C163 /* ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEffects.h; sourceTree = "<group>"; };
+		5120DA391C4760E40023C163 /* ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEffects.m; sourceTree = "<group>"; };
 		512EA4041C44E6C300B61DC5 /* UIImage+RBImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RBImage.h"; sourceTree = "<group>"; };
 		512EA4051C44E6C300B61DC5 /* UIImage+RBImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RBImage.m"; sourceTree = "<group>"; };
 		51437F111C05B83900DD3F0B /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CrashReporter.framework; sourceTree = "<group>"; };
@@ -208,6 +214,7 @@
 				2CBE2C891ACBD54E0036FEF2 /* Lib */,
 				2C4DA43E1BCA1C4E00BE8AAD /* Dispatch */,
 				2C3B5F961AF8B5B800A424DA /* LifeCycle */,
+				5120DA331C474D120023C163 /* Swizzling */,
 				51131E6F1C17D41E00076D13 /* TransitionAnimator.h */,
 				51131E701C17D41E00076D13 /* TransitionAnimator.m */,
 				2CF3E8521AE63DEE00FE1CC5 /* ScrollHiddenBarVC.h */,
@@ -255,6 +262,7 @@
 		2CBE2C891ACBD54E0036FEF2 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				5120DA371C4760E40023C163 /* ImageEffects */,
 				519BCD2A1C084A3900B6CF8A /* Material */,
 				51437F101C05B83900DD3F0B /* RBPerformanceMonitor */,
 				2C4BD75C1B031FED00CB291F /* RBShowImageView.h */,
@@ -295,6 +303,24 @@
 				511F9B871BF587FB00F05E17 /* UIImage+Hook.m */,
 			);
 			path = ImageHook;
+			sourceTree = "<group>";
+		};
+		5120DA331C474D120023C163 /* Swizzling */ = {
+			isa = PBXGroup;
+			children = (
+				5120DA341C474D120023C163 /* SwizzlingController.h */,
+				5120DA351C474D120023C163 /* SwizzlingController.m */,
+			);
+			path = Swizzling;
+			sourceTree = "<group>";
+		};
+		5120DA371C4760E40023C163 /* ImageEffects */ = {
+			isa = PBXGroup;
+			children = (
+				5120DA381C4760E40023C163 /* ImageEffects.h */,
+				5120DA391C4760E40023C163 /* ImageEffects.m */,
+			);
+			path = ImageEffects;
 			sourceTree = "<group>";
 		};
 		51437F101C05B83900DD3F0B /* RBPerformanceMonitor */ = {
@@ -468,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CF3E8541AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m in Sources */,
+				5120DA361C474D120023C163 /* SwizzlingController.m in Sources */,
 				2C404D171BC951E700FBCBE7 /* ViewController+Test.m in Sources */,
 				2CF3E8511AE63DA600FE1CC5 /* UINavigationBar+Gradient.m in Sources */,
 				2CBE2C681ACBD3000036FEF2 /* ViewController.m in Sources */,
@@ -484,6 +511,7 @@
 				2C39751D1ACF8B11000B01D7 /* RBSegmentedControl.m in Sources */,
 				2C4DA4441BCA1CD900BE8AAD /* DispatchController.m in Sources */,
 				2CBE2C621ACBD3000036FEF2 /* main.m in Sources */,
+				5120DA3A1C4760E40023C163 /* ImageEffects.m in Sources */,
 				512EA4061C44E6C300B61DC5 /* UIImage+RBImage.m in Sources */,
 				2C4BD75D1B031FED00CB291F /* RBShowImageView.m in Sources */,
 				2CD693131ADE516D003C5927 /* APRoundButton.m in Sources */,
