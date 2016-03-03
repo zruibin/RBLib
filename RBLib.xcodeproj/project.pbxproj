@@ -42,6 +42,8 @@
 		51437F141C05B83900DD3F0B /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51437F111C05B83900DD3F0B /* CrashReporter.framework */; };
 		51437F151C05B83900DD3F0B /* RBPerformanceMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 51437F131C05B83900DD3F0B /* RBPerformanceMonitor.m */; };
 		519BCD2D1C084A3900B6CF8A /* UIView+Material.m in Sources */ = {isa = PBXBuildFile; fileRef = 519BCD2C1C084A3900B6CF8A /* UIView+Material.m */; };
+		51ADF6AF1C87E1F8009E0C5B /* RBRuntimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 51ADF6AE1C87E1F8009E0C5B /* RBRuntimeTests.m */; };
+		51ADF6B11C87E335009E0C5B /* RBRunLoopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 51ADF6B01C87E335009E0C5B /* RBRunLoopTests.m */; };
 		E9FF1B3C26FC9E49C0BC6FD5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 722091F74D5DD9D641EC4AA3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -90,7 +92,7 @@
 		2CBE2C751ACBD3000036FEF2 /* RBLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RBLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBE2C7A1ACBD3000036FEF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CBE2C7B1ACBD3000036FEF2 /* RBLibTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RBLibTests.m; sourceTree = "<group>"; };
-		2CBE2C851ACBD3B10036FEF2 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		2CBE2C851ACBD3B10036FEF2 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2CBE2C861ACBD3B10036FEF2 /* RBLib.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RBLib.podspec; sourceTree = "<group>"; };
 		2CBE2C8A1ACBD63E0036FEF2 /* RBMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBMacros.h; sourceTree = "<group>"; };
 		2CBE2C8B1ACBDB990036FEF2 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
@@ -118,6 +120,8 @@
 		51437F131C05B83900DD3F0B /* RBPerformanceMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBPerformanceMonitor.m; sourceTree = "<group>"; };
 		519BCD2B1C084A3900B6CF8A /* UIView+Material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Material.h"; sourceTree = "<group>"; };
 		519BCD2C1C084A3900B6CF8A /* UIView+Material.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Material.m"; sourceTree = "<group>"; };
+		51ADF6AE1C87E1F8009E0C5B /* RBRuntimeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBRuntimeTests.m; sourceTree = "<group>"; };
+		51ADF6B01C87E335009E0C5B /* RBRunLoopTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBRunLoopTests.m; sourceTree = "<group>"; };
 		664228D96C57C7F31603BC6D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		722091F74D5DD9D641EC4AA3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B03E503867321FF2118BEA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 			children = (
 				2CBE2C7B1ACBD3000036FEF2 /* RBLibTests.m */,
 				2CBE2C791ACBD3000036FEF2 /* Supporting Files */,
+				51ADF6AE1C87E1F8009E0C5B /* RBRuntimeTests.m */,
+				51ADF6B01C87E335009E0C5B /* RBRunLoopTests.m */,
 			);
 			path = RBLibTests;
 			sourceTree = "<group>";
@@ -523,7 +529,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51ADF6AF1C87E1F8009E0C5B /* RBRuntimeTests.m in Sources */,
 				2CBE2C7C1ACBD3000036FEF2 /* RBLibTests.m in Sources */,
+				51ADF6B11C87E335009E0C5B /* RBRunLoopTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
