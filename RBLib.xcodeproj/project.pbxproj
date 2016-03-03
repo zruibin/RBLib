@@ -44,6 +44,9 @@
 		519BCD2D1C084A3900B6CF8A /* UIView+Material.m in Sources */ = {isa = PBXBuildFile; fileRef = 519BCD2C1C084A3900B6CF8A /* UIView+Material.m */; };
 		51ADF6AF1C87E1F8009E0C5B /* RBRuntimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 51ADF6AE1C87E1F8009E0C5B /* RBRuntimeTests.m */; };
 		51ADF6B11C87E335009E0C5B /* RBRunLoopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 51ADF6B01C87E335009E0C5B /* RBRunLoopTests.m */; };
+		51ADF6B51C882EA9009E0C5B /* CoreTextController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51ADF6B41C882EA9009E0C5B /* CoreTextController.m */; };
+		51ADF6B81C883077009E0C5B /* CoreTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51ADF6B71C883077009E0C5B /* CoreTextView.m */; };
+		51ADF6BB1C8830D0009E0C5B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51ADF6B91C8830C5009E0C5B /* CoreText.framework */; };
 		E9FF1B3C26FC9E49C0BC6FD5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 722091F74D5DD9D641EC4AA3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +125,11 @@
 		519BCD2C1C084A3900B6CF8A /* UIView+Material.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Material.m"; sourceTree = "<group>"; };
 		51ADF6AE1C87E1F8009E0C5B /* RBRuntimeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBRuntimeTests.m; sourceTree = "<group>"; };
 		51ADF6B01C87E335009E0C5B /* RBRunLoopTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBRunLoopTests.m; sourceTree = "<group>"; };
+		51ADF6B31C882EA9009E0C5B /* CoreTextController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextController.h; sourceTree = "<group>"; };
+		51ADF6B41C882EA9009E0C5B /* CoreTextController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextController.m; sourceTree = "<group>"; };
+		51ADF6B61C883077009E0C5B /* CoreTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextView.h; sourceTree = "<group>"; };
+		51ADF6B71C883077009E0C5B /* CoreTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextView.m; sourceTree = "<group>"; };
+		51ADF6B91C8830C5009E0C5B /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		664228D96C57C7F31603BC6D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		722091F74D5DD9D641EC4AA3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B03E503867321FF2118BEA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51ADF6BB1C8830D0009E0C5B /* CoreText.framework in Frameworks */,
 				2C8474611AF7505C00194D2F /* libPods-pop.a in Frameworks */,
 				51437F141C05B83900DD3F0B /* CrashReporter.framework in Frameworks */,
 				2C8474621AF7505C00194D2F /* libPods-SDWebImage.a in Frameworks */,
@@ -219,6 +228,7 @@
 				2C4DA43E1BCA1C4E00BE8AAD /* Dispatch */,
 				2C3B5F961AF8B5B800A424DA /* LifeCycle */,
 				5120DA331C474D120023C163 /* Swizzling */,
+				51ADF6B21C882E86009E0C5B /* CoreText */,
 				51131E6F1C17D41E00076D13 /* TransitionAnimator.h */,
 				51131E701C17D41E00076D13 /* TransitionAnimator.m */,
 				2CF3E8521AE63DEE00FE1CC5 /* ScrollHiddenBarVC.h */,
@@ -348,9 +358,21 @@
 			path = Material;
 			sourceTree = "<group>";
 		};
+		51ADF6B21C882E86009E0C5B /* CoreText */ = {
+			isa = PBXGroup;
+			children = (
+				51ADF6B31C882EA9009E0C5B /* CoreTextController.h */,
+				51ADF6B41C882EA9009E0C5B /* CoreTextController.m */,
+				51ADF6B61C883077009E0C5B /* CoreTextView.h */,
+				51ADF6B71C883077009E0C5B /* CoreTextView.m */,
+			);
+			path = CoreText;
+			sourceTree = "<group>";
+		};
 		6C813DD4121C775F6518B192 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				51ADF6B91C8830C5009E0C5B /* CoreText.framework */,
 				2C84745D1AF7505C00194D2F /* libPods-pop.a */,
 				2C84745E1AF7505C00194D2F /* libPods-SDWebImage.a */,
 				2C84745F1AF7505C00194D2F /* libPods-UIActivityIndicator-for-SDWebImage.a */,
@@ -500,9 +522,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CF3E8541AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m in Sources */,
+				51ADF6B51C882EA9009E0C5B /* CoreTextController.m in Sources */,
 				5120DA361C474D120023C163 /* SwizzlingController.m in Sources */,
 				2C404D171BC951E700FBCBE7 /* ViewController+Test.m in Sources */,
 				2CF3E8511AE63DA600FE1CC5 /* UINavigationBar+Gradient.m in Sources */,
+				51ADF6B81C883077009E0C5B /* CoreTextView.m in Sources */,
 				2CBE2C681ACBD3000036FEF2 /* ViewController.m in Sources */,
 				2C13F49B1B5F64F90078BA2B /* RBUtil.m in Sources */,
 				511F9B881BF587FB00F05E17 /* UIImage+Hook.m in Sources */,
