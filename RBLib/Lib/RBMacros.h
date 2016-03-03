@@ -170,6 +170,15 @@ BLOCK_EXEC(completionBlock, arg1, arg2);
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 
+//waitForExpectationsWithTimeout是等待时间，超过了就不再等待往下执行。
+#define RB_TEST_WAIT do {  \
+    [self expectationForNotification:@"RBBaseTest" object:nil handler:nil]; \
+    [self waitForExpectationsWithTimeout:30 handler:nil]; \
+} while (0);
+
+#define RB_TEST_NOTIFY  \
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"RBBaseTest" object:nil];
+
 #endif
 
 

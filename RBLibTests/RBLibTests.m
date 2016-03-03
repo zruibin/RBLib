@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "RBMacros.h"
 
 @interface RBLibTests : XCTestCase
 
@@ -27,7 +28,13 @@
 
 - (void)testExample {
     // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+//    XCTAssert(YES, @"Pass");
+    DLog(@"testExample...");
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        RB_TEST_NOTIFY
+    });
+    RB_TEST_WAIT
+    DLog(@"testExample...END...");
 }
 
 - (void)testPerformanceExample {
