@@ -455,6 +455,11 @@
 					2CBE2C5B1ACBD3000036FEF2 = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = EL653ZN3QZ;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					2CBE2C741ACBD3000036FEF2 = {
 						CreatedOnToolsVersion = 6.1;

@@ -11,7 +11,11 @@
 #import "UIImage+Hook.h"
 #import "RBPerformanceMonitor.h"
 
+static NSInteger count = 10;
+
 @interface AppDelegate ()
+
+@property (assign, nonatomic) UIBackgroundTaskIdentifier backgroundUpdateTask;
 
 @end
 
@@ -31,18 +35,13 @@
 //    [self.window makeKeyAndVisible];
     
     [UIImage initialize];
-    [[RBPerformanceMonitor sharedInstance] start];
+//    [[RBPerformanceMonitor sharedInstance] start];
     return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -55,6 +54,41 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark -
+
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    NSLog(@"applicationDidEnterBackground...");
+    /*
+     使用block的另一个用处是可以让程序在后台较长久的运行。
+     在以前，当app被按home键退出后，app仅有最多5秒钟的时候做一些保存或清理资源的工作。
+     但是应用可以调用UIApplication的beginBackgroundTaskWithExpirationHandler方法，让app最多有10分钟的时间在后台长久运行。这个时间可以用来做清理本地缓存，发送统计数据等工作。
+     */
+    [self beingBackgroundUpdateTask];
+    
+    // 在这里加上你需要长久运行的代码
+    while (count > 0) {
+       NSLog(@"applicationDidEnterBackground task --> %ld", count);
+        --count;
+        [NSThread sleepForTimeInterval:2.0f];
+    }
+    
+    [self endBackgroundUpdateTask];
+}
+
+- (void)beingBackgroundUpdateTask
+{
+    self.backgroundUpdateTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        [self endBackgroundUpdateTask];
+    }];
+}
+
+- (void)endBackgroundUpdateTask
+{
+    [[UIApplication sharedApplication] endBackgroundTask: self.backgroundUpdateTask];
+    self.backgroundUpdateTask = UIBackgroundTaskInvalid;
 }
 
 @end
