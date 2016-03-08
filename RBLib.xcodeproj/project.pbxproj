@@ -31,6 +31,9 @@
 		2CBE2C881ACBD3B10036FEF2 /* RBLib.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 2CBE2C861ACBD3B10036FEF2 /* RBLib.podspec */; };
 		2CBE2C8D1ACBDB990036FEF2 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE2C8C1ACBDB990036FEF2 /* UncaughtExceptionHandler.m */; };
 		2CD693131ADE516D003C5927 /* APRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD693121ADE516D003C5927 /* APRoundButton.m */; };
+		2CDC89F91C8AC29200656A7F /* RBFaceDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDC89F81C8AC29200656A7F /* RBFaceDetector.m */; };
+		2CDC89FB1C8AC30A00656A7F /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDC89FA1C8AC30A00656A7F /* CoreImage.framework */; };
+		2CDC89FD1C8AC31300656A7F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDC89FC1C8AC31300656A7F /* QuartzCore.framework */; };
 		2CF3E8511AE63DA600FE1CC5 /* UINavigationBar+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3E8501AE63DA600FE1CC5 /* UINavigationBar+Gradient.m */; };
 		2CF3E8541AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3E8531AE63DEE00FE1CC5 /* ScrollHiddenBarVC.m */; };
 		510F27FD1BC77FB30035D26A /* RBClassHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 510F27FC1BC77FB30035D26A /* RBClassHook.m */; };
@@ -102,6 +105,10 @@
 		2CBE2C8C1ACBDB990036FEF2 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		2CD693111ADE516D003C5927 /* APRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APRoundButton.h; sourceTree = "<group>"; };
 		2CD693121ADE516D003C5927 /* APRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APRoundButton.m; sourceTree = "<group>"; };
+		2CDC89F71C8AC29200656A7F /* RBFaceDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBFaceDetector.h; sourceTree = "<group>"; };
+		2CDC89F81C8AC29200656A7F /* RBFaceDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBFaceDetector.m; sourceTree = "<group>"; };
+		2CDC89FA1C8AC30A00656A7F /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		2CDC89FC1C8AC31300656A7F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2CF3E84F1AE63DA600FE1CC5 /* UINavigationBar+Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Gradient.h"; sourceTree = "<group>"; };
 		2CF3E8501AE63DA600FE1CC5 /* UINavigationBar+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Gradient.m"; sourceTree = "<group>"; };
 		2CF3E8521AE63DEE00FE1CC5 /* ScrollHiddenBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollHiddenBarVC.h; sourceTree = "<group>"; };
@@ -140,6 +147,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CDC89FD1C8AC31300656A7F /* QuartzCore.framework in Frameworks */,
+				2CDC89FB1C8AC30A00656A7F /* CoreImage.framework in Frameworks */,
 				51ADF6BB1C8830D0009E0C5B /* CoreText.framework in Frameworks */,
 				2C8474611AF7505C00194D2F /* libPods-pop.a in Frameworks */,
 				51437F141C05B83900DD3F0B /* CrashReporter.framework in Frameworks */,
@@ -299,8 +308,18 @@
 				510F27FC1BC77FB30035D26A /* RBClassHook.m */,
 				512EA4041C44E6C300B61DC5 /* UIImage+RBImage.h */,
 				512EA4051C44E6C300B61DC5 /* UIImage+RBImage.m */,
+				2CDC89F61C8AC28600656A7F /* RBFaceDetector */,
 			);
 			path = Lib;
+			sourceTree = "<group>";
+		};
+		2CDC89F61C8AC28600656A7F /* RBFaceDetector */ = {
+			isa = PBXGroup;
+			children = (
+				2CDC89F71C8AC29200656A7F /* RBFaceDetector.h */,
+				2CDC89F81C8AC29200656A7F /* RBFaceDetector.m */,
+			);
+			path = RBFaceDetector;
 			sourceTree = "<group>";
 		};
 		2CF3E84E1AE63DA500FE1CC5 /* UINavigationBar+Gradient */ = {
@@ -372,6 +391,8 @@
 		6C813DD4121C775F6518B192 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2CDC89FC1C8AC31300656A7F /* QuartzCore.framework */,
+				2CDC89FA1C8AC30A00656A7F /* CoreImage.framework */,
 				51ADF6B91C8830C5009E0C5B /* CoreText.framework */,
 				2C84745D1AF7505C00194D2F /* libPods-pop.a */,
 				2C84745E1AF7505C00194D2F /* libPods-SDWebImage.a */,
@@ -545,6 +566,7 @@
 				512EA4061C44E6C300B61DC5 /* UIImage+RBImage.m in Sources */,
 				2C4BD75D1B031FED00CB291F /* RBShowImageView.m in Sources */,
 				2CD693131ADE516D003C5927 /* APRoundButton.m in Sources */,
+				2CDC89F91C8AC29200656A7F /* RBFaceDetector.m in Sources */,
 				51437F151C05B83900DD3F0B /* RBPerformanceMonitor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
