@@ -50,6 +50,7 @@
 		51ADF6B51C882EA9009E0C5B /* CoreTextController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51ADF6B41C882EA9009E0C5B /* CoreTextController.m */; };
 		51ADF6B81C883077009E0C5B /* CoreTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51ADF6B71C883077009E0C5B /* CoreTextView.m */; };
 		51ADF6BB1C8830D0009E0C5B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51ADF6B91C8830C5009E0C5B /* CoreText.framework */; };
+		E0777B111D1902D2000AA89A /* RBURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = E0777B101D1902D2000AA89A /* RBURLProtocol.m */; };
 		E9FF1B3C26FC9E49C0BC6FD5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 722091F74D5DD9D641EC4AA3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +141,8 @@
 		664228D96C57C7F31603BC6D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		722091F74D5DD9D641EC4AA3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B03E503867321FF2118BEA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E0777B0F1D1902D2000AA89A /* RBURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBURLProtocol.h; sourceTree = "<group>"; };
+		E0777B101D1902D2000AA89A /* RBURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBURLProtocol.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +290,7 @@
 		2CBE2C891ACBD54E0036FEF2 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				E0777B0E1D1902C0000AA89A /* RBURLProtocol */,
 				5120DA371C4760E40023C163 /* ImageEffects */,
 				519BCD2A1C084A3900B6CF8A /* Material */,
 				51437F101C05B83900DD3F0B /* RBPerformanceMonitor */,
@@ -401,6 +405,15 @@
 				722091F74D5DD9D641EC4AA3 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E0777B0E1D1902C0000AA89A /* RBURLProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				E0777B0F1D1902D2000AA89A /* RBURLProtocol.h */,
+				E0777B101D1902D2000AA89A /* RBURLProtocol.m */,
+			);
+			path = RBURLProtocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -573,6 +586,7 @@
 				2CD693131ADE516D003C5927 /* APRoundButton.m in Sources */,
 				2CDC89F91C8AC29200656A7F /* RBFaceDetector.m in Sources */,
 				51437F151C05B83900DD3F0B /* RBPerformanceMonitor.m in Sources */,
+				E0777B111D1902D2000AA89A /* RBURLProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

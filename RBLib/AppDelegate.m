@@ -10,6 +10,7 @@
 #import "UncaughtExceptionHandler.h"
 #import "UIImage+Hook.h"
 #import "RBPerformanceMonitor.h"
+#import "RBURLProtocol.h"
 
 static NSInteger count = 10;
 
@@ -36,6 +37,7 @@ static NSInteger count = 10;
     
     [UIImage initialize];
 //    [[RBPerformanceMonitor sharedInstance] start];
+    [NSURLProtocol registerClass:[RBURLProtocol class]];
     return YES;
 }
 
