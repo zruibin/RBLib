@@ -2,18 +2,20 @@
 //  RBPerformanceMonitor.m
 //  RBLib
 //
-//  Created by zruibin on 15/11/25.
-//  Copyright © 2015年 RBCHOW. All rights reserved.
+//  Created by Ruibin.Chow on 15/11/25.
+//  Copyright © 2015年 Ruibin.Chow All rights reserved.
 //
 
 #import "RBPerformanceMonitor.h"
 #import <CrashReporter/CrashReporter.h>
+#import <QuartzCore/CADisplayLink.h>
+#import <libkern/OSAtomic.h>
 
-//#ifdef DEBUG
+#ifdef DEBUG
 #define Report(FORMAT, ...) fprintf(stderr,"[%s:%d]\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String])
-//#else
-//#define Report(...)
-//#endif
+#else
+#define Report(...)
+#endif
 
 @interface RBPerformanceMonitor ()
 {
@@ -24,6 +26,16 @@
     dispatch_semaphore_t semaphore;
     CFRunLoopActivity activity;
 }
+
+@property(nonatomic, strong) CADisplayLink *displayLink;
+@property(nonatomic, assign) OSSpinLock spinLock;
+@property(nonatomic, assign) NSUInteger frameStep;
+@property(nonatomic, assign) CFAbsoluteTime startFPSTime;
+@property(nonatomic, assign) CFAbsoluteTime stepBeginTime;
+
+- (void)startFPSMonitor;
+- (void)stopFPSMonitor;
+
 @end
 
 @implementation RBPerformanceMonitor
@@ -50,6 +62,8 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
 
 - (void)stop
 {
+    [self stopFPSMonitor];
+    
     if (!observer)
         return;
     
@@ -60,6 +74,8 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
 
 - (void)start
 {
+    [self startFPSMonitor];
+    
     if (observer)
         return;
     
@@ -76,44 +92,83 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
                                        &context);
     CFRunLoopAddObserver(CFRunLoopGetMain(), observer, kCFRunLoopCommonModes);
     
+    dispatch_queue_t queue = dispatch_queue_create("RBPerformanceMonitor Thread", DISPATCH_QUEUE_CONCURRENT);
     // 在子线程监控时长
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        while (YES)
-        {
-            // 假定连续5次超时50ms认为卡顿(当然也包含了单次超时250ms)
+    dispatch_async(queue, ^{
+        [[NSThread currentThread] setName:@"RBPerformanceMonitor Thread"];
+        while (YES) {
+            [self displayFPS];
             long st = dispatch_semaphore_wait(semaphore, dispatch_time(DISPATCH_TIME_NOW, 50*NSEC_PER_MSEC));
-            if (st != 0)
-            {
-                if (!observer)
-                {
+            if (st != 0) {
+                if (!observer) {
                     timeoutCount = 0;
                     semaphore = 0;
                     activity = 0;
                     return;
                 }
                 
-                if (activity==kCFRunLoopBeforeSources || activity==kCFRunLoopAfterWaiting)
-                {
+                if (activity==kCFRunLoopBeforeSources || activity==kCFRunLoopAfterWaiting) {
 //                    if (++timeoutCount < 5)
 //                        continue;
-                    
                     PLCrashReporterConfig *config = [[PLCrashReporterConfig alloc] initWithSignalHandlerType:PLCrashReporterSignalHandlerTypeBSD
                                                                                        symbolicationStrategy:PLCrashReporterSymbolicationStrategyAll];
                     PLCrashReporter *crashReporter = [[PLCrashReporter alloc] initWithConfiguration:config];
-                    
-                    NSData *data = [crashReporter generateLiveReport];
-                    PLCrashReport *reporter = [[PLCrashReport alloc] initWithData:data error:NULL];
+                    NSError *error = nil;
+                    NSData *data = [crashReporter generateLiveReportAndReturnError:&error];
+                    PLCrashReport *reporter = [[PLCrashReport alloc] initWithData:data error:&error];
                     NSString *report = [PLCrashReportTextFormatter stringValueForCrashReport:reporter
                                                                               withTextFormat:PLCrashReportTextFormatiOS];
                     
                     Report(@"Report:\n------------\n%@\n------------\n", report);
+                    timeoutCount = 0;
                 }
             }
-            timeoutCount = 0;
         }
     });
 }
 
+#pragma makr - FPS
+
+- (void)startFPSMonitor
+{
+    if (self.displayLink) return ;
+    
+    self.startFPSTime = CFAbsoluteTimeGetCurrent();
+    self.stepBeginTime = CFAbsoluteTimeGetCurrent();
+    _spinLock = OS_SPINLOCK_INIT;
+    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(displayLinkCallback)];
+    [self.displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+}
+
+- (void)stopFPSMonitor
+{
+    if (self.displayLink) {
+        [self.displayLink invalidate];
+        self.displayLink = nil;
+    }
+}
+
+- (void)displayLinkCallback
+{
+    OSSpinLockLock(&_spinLock);
+    ++self.frameStep;
+    OSSpinLockUnlock(&_spinLock);
+}
+
+- (void)displayFPS
+{
+    CFAbsoluteTime nowTime = CFAbsoluteTimeGetCurrent();
+    CFAbsoluteTime duration = nowTime - self.stepBeginTime;
+    if (duration > 1.0f) {
+        NSUInteger frame = self.frameStep / round(duration);
+        Report(@"%0.0f sec FPS: \t %ld", round(nowTime-self.startFPSTime), frame);
+        self.stepBeginTime = nowTime;
+        
+        OSSpinLockLock(&_spinLock);
+        self.frameStep = 0;
+        OSSpinLockUnlock(&_spinLock);
+    }
+}
 
 
 @end

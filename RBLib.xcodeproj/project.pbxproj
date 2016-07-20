@@ -29,7 +29,6 @@
 		2CBE2C7C1ACBD3000036FEF2 /* RBLibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE2C7B1ACBD3000036FEF2 /* RBLibTests.m */; };
 		2CBE2C871ACBD3B10036FEF2 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2CBE2C851ACBD3B10036FEF2 /* Podfile */; };
 		2CBE2C881ACBD3B10036FEF2 /* RBLib.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 2CBE2C861ACBD3B10036FEF2 /* RBLib.podspec */; };
-		2CBE2C8D1ACBDB990036FEF2 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE2C8C1ACBDB990036FEF2 /* UncaughtExceptionHandler.m */; };
 		2CD693131ADE516D003C5927 /* APRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CD693121ADE516D003C5927 /* APRoundButton.m */; };
 		2CDC89F91C8AC29200656A7F /* RBFaceDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDC89F81C8AC29200656A7F /* RBFaceDetector.m */; };
 		2CDC89FB1C8AC30A00656A7F /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDC89FA1C8AC30A00656A7F /* CoreImage.framework */; };
@@ -50,6 +49,7 @@
 		51ADF6B51C882EA9009E0C5B /* CoreTextController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51ADF6B41C882EA9009E0C5B /* CoreTextController.m */; };
 		51ADF6B81C883077009E0C5B /* CoreTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 51ADF6B71C883077009E0C5B /* CoreTextView.m */; };
 		51ADF6BB1C8830D0009E0C5B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51ADF6B91C8830C5009E0C5B /* CoreText.framework */; };
+		E072FB9A1D3F77E300A915DF /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E072FB991D3F77E300A915DF /* UncaughtExceptionHandler.m */; };
 		E0777B111D1902D2000AA89A /* RBURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = E0777B101D1902D2000AA89A /* RBURLProtocol.m */; };
 		E9FF1B3C26FC9E49C0BC6FD5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 722091F74D5DD9D641EC4AA3 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -102,8 +102,6 @@
 		2CBE2C851ACBD3B10036FEF2 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2CBE2C861ACBD3B10036FEF2 /* RBLib.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RBLib.podspec; sourceTree = "<group>"; };
 		2CBE2C8A1ACBD63E0036FEF2 /* RBMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBMacros.h; sourceTree = "<group>"; };
-		2CBE2C8B1ACBDB990036FEF2 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
-		2CBE2C8C1ACBDB990036FEF2 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		2CD693111ADE516D003C5927 /* APRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APRoundButton.h; sourceTree = "<group>"; };
 		2CD693121ADE516D003C5927 /* APRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APRoundButton.m; sourceTree = "<group>"; };
 		2CDC89F71C8AC29200656A7F /* RBFaceDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBFaceDetector.h; sourceTree = "<group>"; };
@@ -141,6 +139,9 @@
 		664228D96C57C7F31603BC6D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		722091F74D5DD9D641EC4AA3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B03E503867321FF2118BEA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E072FB981D3F77E300A915DF /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
+		E072FB991D3F77E300A915DF /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		E072FB9B1D3F787200A915DF /* RBLibPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RBLibPrefixHeader.pch; sourceTree = "<group>"; };
 		E0777B0F1D1902D2000AA89A /* RBURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBURLProtocol.h; sourceTree = "<group>"; };
 		E0777B101D1902D2000AA89A /* RBURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBURLProtocol.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -264,6 +265,7 @@
 			children = (
 				2CBE2C601ACBD3000036FEF2 /* Info.plist */,
 				2CBE2C611ACBD3000036FEF2 /* main.m */,
+				E072FB9B1D3F787200A915DF /* RBLibPrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -294,6 +296,7 @@
 				5120DA371C4760E40023C163 /* ImageEffects */,
 				519BCD2A1C084A3900B6CF8A /* Material */,
 				51437F101C05B83900DD3F0B /* RBPerformanceMonitor */,
+				E072FB971D3F77E300A915DF /* CaughtException */,
 				2C4BD75C1B031FED00CB291F /* RBShowImageView.h */,
 				2C4BD75B1B031FED00CB291F /* RBShowImageView.m */,
 				2CF3E84E1AE63DA500FE1CC5 /* UINavigationBar+Gradient */,
@@ -301,8 +304,6 @@
 				2CD693121ADE516D003C5927 /* APRoundButton.m */,
 				2C39751A1ACF8B11000B01D7 /* RBSegmentedControl */,
 				2CBE2C8A1ACBD63E0036FEF2 /* RBMacros.h */,
-				2CBE2C8B1ACBDB990036FEF2 /* UncaughtExceptionHandler.h */,
-				2CBE2C8C1ACBDB990036FEF2 /* UncaughtExceptionHandler.m */,
 				2C37FC401ACBFC3B0010EFBF /* RBChatTimeFormateTool.h */,
 				2C37FC411ACBFC3B0010EFBF /* RBChatTimeFormateTool.m */,
 				2C13F4991B5F64F90078BA2B /* RBUtil.h */,
@@ -405,6 +406,15 @@
 				722091F74D5DD9D641EC4AA3 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E072FB971D3F77E300A915DF /* CaughtException */ = {
+			isa = PBXGroup;
+			children = (
+				E072FB981D3F77E300A915DF /* UncaughtExceptionHandler.h */,
+				E072FB991D3F77E300A915DF /* UncaughtExceptionHandler.m */,
+			);
+			path = CaughtException;
 			sourceTree = "<group>";
 		};
 		E0777B0E1D1902C0000AA89A /* RBURLProtocol */ = {
@@ -565,6 +575,7 @@
 				5120DA361C474D120023C163 /* SwizzlingController.m in Sources */,
 				2C404D171BC951E700FBCBE7 /* ViewController+Test.m in Sources */,
 				2CF3E8511AE63DA600FE1CC5 /* UINavigationBar+Gradient.m in Sources */,
+				E072FB9A1D3F77E300A915DF /* UncaughtExceptionHandler.m in Sources */,
 				51ADF6B81C883077009E0C5B /* CoreTextView.m in Sources */,
 				2CBE2C681ACBD3000036FEF2 /* ViewController.m in Sources */,
 				2C13F49B1B5F64F90078BA2B /* RBUtil.m in Sources */,
@@ -572,7 +583,6 @@
 				2C34968E1AFCA274005F377D /* LifeCycleView.m in Sources */,
 				2C3B5F9A1AF8B60300A424DA /* LifeCycleViewController.m in Sources */,
 				51131E711C17D41E00076D13 /* TransitionAnimator.m in Sources */,
-				2CBE2C8D1ACBDB990036FEF2 /* UncaughtExceptionHandler.m in Sources */,
 				2CBE2C651ACBD3000036FEF2 /* AppDelegate.m in Sources */,
 				519BCD2D1C084A3900B6CF8A /* UIView+Material.m in Sources */,
 				510F27FD1BC77FB30035D26A /* RBClassHook.m in Sources */,
@@ -718,6 +728,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/RBLib/Lib/RBPerformanceMonitor",
 				);
+				GCC_PREFIX_HEADER = RBLib/RBLibPrefixHeader.pch;
 				INFOPLIST_FILE = RBLib/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -738,6 +749,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/RBLib/Lib/RBPerformanceMonitor",
 				);
+				GCC_PREFIX_HEADER = RBLib/RBLibPrefixHeader.pch;
 				INFOPLIST_FILE = RBLib/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (

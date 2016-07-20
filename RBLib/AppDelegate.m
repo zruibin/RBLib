@@ -25,6 +25,17 @@ static NSInteger count = 10;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    InstallUncaughtExceptionHandler();
+    
+#if DEBUG
+    [[RBPerformanceMonitor sharedInstance] start];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 20ull * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [[RBPerformanceMonitor sharedInstance] stop];
+    });
+#endif
+    
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    self.window.backgroundColor = [UIColor whiteColor];
 //    

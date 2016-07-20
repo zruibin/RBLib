@@ -2,8 +2,8 @@
 //  RBPerformanceMonitor.h
 //  RBLib
 //
-//  Created by zruibin on 15/11/25.
-//  Copyright © 2015年 RBCHOW. All rights reserved.
+//  Created by Ruibin.Chow on 15/11/25.
+//  Copyright © 2015年 Ruibin.Chow All rights reserved.
 //
 
 /*

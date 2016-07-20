@@ -10,16 +10,19 @@
 
 #include <libkern/OSAtomic.h>
 #include <execinfo.h>
+#import <sys/utsname.h>
 
 NSString * const UncaughtExceptionHandlerSignalExceptionName = @"UncaughtExceptionHandlerSignalExceptionName";
 NSString * const UncaughtExceptionHandlerSignalKey = @"UncaughtExceptionHandlerSignalKey";
 NSString * const UncaughtExceptionHandlerAddressesKey = @"UncaughtExceptionHandlerAddressesKey";
+NSString * const UncaughtExceptionHandlerAppInfo = @"UncaughtExceptionHandlerAppInfo";
 
 volatile int32_t UncaughtExceptionCount = 0;
 const int32_t UncaughtExceptionMaximum = 10;
 const NSInteger UncaughtExceptionHandlerSkipAddressCount = 4;
 const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
 
+NSString* getAppInfo();
 
 @implementation UncaughtExceptionHandler
 
@@ -47,8 +50,11 @@ const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
 
 - (void)handleException:(NSException *)exception
 {
-    NSLog(@"异常原因如下:\n%@\n%@", [exception reason],
+    DLog(@" %@", getAppInfo());
+    
+    DLog(@"异常原因如下:\n%@\n%@", [exception reason],
             [[exception userInfo] objectForKey:UncaughtExceptionHandlerAddressesKey]);
+
     
     NSSetUncaughtExceptionHandler(NULL);
     
@@ -72,19 +78,21 @@ const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
 @end
 
 
-
-
 NSString* getAppInfo()
 {
-    NSString *appInfo = [NSString stringWithFormat:@"App : %@ %@(%@)\nDevice : %@\nOS Version : %@ %@\nUDID : %@\n",
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    NSString *deviceString = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+    
+    NSString *appInfo = [NSString stringWithFormat:@"\nApp : %@ %@(%@) \nDevice : %@\nOS Version : %@ %@\nUDID : %@\n",
                          [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"],
                          [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
                          [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"],
-                         [UIDevice currentDevice].model,
+                         deviceString,
                          [UIDevice currentDevice].systemName,
                          [UIDevice currentDevice].systemVersion,
                          [UIDevice currentDevice].identifierForVendor.UUIDString];
-    NSLog(@"Crash!!!! %@", appInfo);
+//    DLog(@"Crash!!!! %@", [[NSBundle mainBundle] infoDictionary]);
     return appInfo;
 }
 
@@ -120,6 +128,8 @@ void SignalHandler(int signal)
 
     NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithObject:[NSNumber numberWithInt:signal]
                                                                        forKey:UncaughtExceptionHandlerSignalKey];
+    [userInfo setObject:getAppInfo() forKey:UncaughtExceptionHandlerAppInfo];
+    
     NSArray *callStack = [UncaughtExceptionHandler backtrace];
     [userInfo setObject:callStack forKey:UncaughtExceptionHandlerAddressesKey];
     
@@ -128,8 +138,7 @@ void SignalHandler(int signal)
              withObject:[NSException exceptionWithName:UncaughtExceptionHandlerSignalExceptionName
                                                                  reason:[NSString stringWithFormat:NSLocalizedString(@"Signal %d was raised.\n" @"%@", nil),
                                                                          signal, getAppInfo()]
-                                                               userInfo: [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:signal]
-                                                                                                     forKey:UncaughtExceptionHandlerSignalKey]]
+                                                               userInfo: userInfo]
              waitUntilDone:YES];
 
 }
@@ -144,8 +153,6 @@ void InstallUncaughtExceptionHandler()
     signal(SIGBUS, SignalHandler);
     signal(SIGPIPE, SignalHandler);
 }
-
-
 
 
 
