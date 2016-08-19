@@ -84,10 +84,22 @@
      dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
      
      2. 等待信号，可以设置超时参数。该函数返回0表示得到通知，非0表示超时。
+        如果semaphore计数大于等于1.计数－1，返回，程序继续运行。如果计数为0，则等待
      dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
      
      3. 通知信号，如果等待线程被唤醒则返回非0，否则返回0。
      dispatch_semaphore_signal(semaphore);
+     */
+    /*
+     信号量是一个整形值并且具有一个初始计数值，并且支持两个操作：信号通知和等待。当一个信号量被信号通知，其计数会被增加。
+     当一个线程在一个信号量上等待时，线程会被阻塞（如果有必要的话），直至计数器大于零，然后线程会减少这个计数。
+     　　在GCD中有三个函数是semaphore的操作，分别是：
+     　　dispatch_semaphore_create　　　创建一个semaphore
+     　　dispatch_semaphore_signal　　　发送一个信号
+     　　dispatch_semaphore_wait　　　　等待信号
+     简单的介绍一下这三个函数，第一个函数有一个整形的参数，我们可以理解为信号的总量，dispatch_semaphore_signal是发送一个信号，
+     自然会让信号总量加1，dispatch_semaphore_wait等待信号，当信号总量少于0的时候就会一直等待，否则就可以正常的执行，并让信号总量-1，
+     根据这样的原理，我们便可以快速的创建一个并发控制来同步任务和有限资源访问控制。
      */
 }
 
