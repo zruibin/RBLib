@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, RBImageType) {
+    RBImageTypeNone,
+    RBImageTypePNG,
+    RBImageTypeJPEG,
+    RBImageTypeGIF,
+    RBImageTypeTIFF,
+    RBImageTypeWEBP
+};
+
 @interface UIImage (RBImage)
 
 - (UIImage*)circleImage:(UIImage*)image withParam:(CGFloat) inset;

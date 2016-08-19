@@ -326,4 +326,34 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     return image;
 }
 
+#pragma mark -
+
+/*通过图片Data数据第一个字节来获取图片扩展名*/
++ (RBImageType)contentTypeForImageData:(NSData *)data
+{
+    uint8_t c;
+    [data getBytes:&c length:1];
+    switch (c) {
+        case 0xFF:
+            return RBImageTypeJPEG;
+        case 0x89:
+            return RBImageTypePNG;
+        case 0x47:
+            return RBImageTypeGIF;
+        case 0x49:
+        case 0x4D:
+            return RBImageTypeTIFF;
+        case 0x52:
+            if ([data length] < 12) {
+                return RBImageTypeNone;
+            }
+            NSString *testString = [[NSString alloc] initWithData:[data subdataWithRange:NSMakeRange(0, 12)] encoding:NSASCIIStringEncoding];
+            if ([testString hasPrefix:@"RIFF"] && [testString hasSuffix:@"WEBP"]) {
+                return RBImageTypeWEBP;
+            }
+            return RBImageTypeNone;
+    }
+    return RBImageTypeNone;
+}
+
 @end
