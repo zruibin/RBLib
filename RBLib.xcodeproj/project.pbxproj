@@ -51,6 +51,7 @@
 		51ADF6BB1C8830D0009E0C5B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51ADF6B91C8830C5009E0C5B /* CoreText.framework */; };
 		E072FB9A1D3F77E300A915DF /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E072FB991D3F77E300A915DF /* UncaughtExceptionHandler.m */; };
 		E0777B111D1902D2000AA89A /* RBURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = E0777B101D1902D2000AA89A /* RBURLProtocol.m */; };
+		E088EBCF1D7021C200346E38 /* RBStackDump.m in Sources */ = {isa = PBXBuildFile; fileRef = E088EBCE1D7021C200346E38 /* RBStackDump.m */; };
 		E9FF1B3C26FC9E49C0BC6FD5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 722091F74D5DD9D641EC4AA3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +145,8 @@
 		E072FB9B1D3F787200A915DF /* RBLibPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RBLibPrefixHeader.pch; sourceTree = "<group>"; };
 		E0777B0F1D1902D2000AA89A /* RBURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBURLProtocol.h; sourceTree = "<group>"; };
 		E0777B101D1902D2000AA89A /* RBURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBURLProtocol.m; sourceTree = "<group>"; };
+		E088EBCD1D7021C200346E38 /* RBStackDump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBStackDump.h; sourceTree = "<group>"; };
+		E088EBCE1D7021C200346E38 /* RBStackDump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBStackDump.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,6 +372,8 @@
 				51437F111C05B83900DD3F0B /* CrashReporter.framework */,
 				51437F121C05B83900DD3F0B /* RBPerformanceMonitor.h */,
 				51437F131C05B83900DD3F0B /* RBPerformanceMonitor.m */,
+				E088EBCD1D7021C200346E38 /* RBStackDump.h */,
+				E088EBCE1D7021C200346E38 /* RBStackDump.m */,
 			);
 			path = RBPerformanceMonitor;
 			sourceTree = "<group>";
@@ -574,6 +579,7 @@
 				51ADF6B51C882EA9009E0C5B /* CoreTextController.m in Sources */,
 				5120DA361C474D120023C163 /* SwizzlingController.m in Sources */,
 				2C404D171BC951E700FBCBE7 /* ViewController+Test.m in Sources */,
+				E088EBCF1D7021C200346E38 /* RBStackDump.m in Sources */,
 				2CF3E8511AE63DA600FE1CC5 /* UINavigationBar+Gradient.m in Sources */,
 				E072FB9A1D3F77E300A915DF /* UncaughtExceptionHandler.m in Sources */,
 				51ADF6B81C883077009E0C5B /* CoreTextView.m in Sources */,

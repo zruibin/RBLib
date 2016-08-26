@@ -11,6 +11,7 @@
 #import "UIImage+Hook.h"
 #import "RBPerformanceMonitor.h"
 #import "RBURLProtocol.h"
+#import "RBStackDump.h"
 
 static NSInteger count = 10;
 
@@ -31,9 +32,10 @@ static NSInteger count = 10;
     
 #if DEBUG
     [[RBPerformanceMonitor sharedInstance] start];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 20ull * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 10ull * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [[RBPerformanceMonitor sharedInstance] stop];
     });
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(dumpTimer) userInfo:nil repeats:YES];
 #endif
     
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -103,5 +105,12 @@ static NSInteger count = 10;
     [[UIApplication sharedApplication] endBackgroundTask: self.backgroundUpdateTask];
     self.backgroundUpdateTask = UIBackgroundTaskInvalid;
 }
+
+
+- (void)dumpTimer
+{
+    [[RBStackDump sharedInstance] dump];
+}
+
 
 @end
