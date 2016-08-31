@@ -32,10 +32,7 @@ static NSInteger count = 10;
     
 #if DEBUG
     [[RBPerformanceMonitor sharedInstance] start];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 10ull * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        [[RBPerformanceMonitor sharedInstance] stop];
-    });
-    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(dumpTimer) userInfo:nil repeats:YES];
+//    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(dumpTimer) userInfo:nil repeats:YES];
 #endif
     
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -109,7 +106,9 @@ static NSInteger count = 10;
 
 - (void)dumpTimer
 {
-//    [RBStackDump backtraceOfAllThread];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+//        [RBStackDump backtraceOfMainThread];
+    });
 }
 
 

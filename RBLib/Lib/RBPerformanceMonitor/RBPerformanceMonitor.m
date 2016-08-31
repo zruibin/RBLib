@@ -97,7 +97,7 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
     dispatch_async(queue, ^{
         [[NSThread currentThread] setName:@"RBPerformanceMonitor Thread"];
         while (YES) {
-            [self displayFPS];
+//            [self displayFPS];
             long st = dispatch_semaphore_wait(semaphore, dispatch_time(DISPATCH_TIME_NOW, 50*NSEC_PER_MSEC));
             if (st != 0) {
                 if (!observer) {
