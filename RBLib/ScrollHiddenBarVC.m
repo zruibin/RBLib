@@ -25,6 +25,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"ScrollHiddenBarVC";
     // Do any additional setup after loading the view.
+    [NSThread sleepForTimeInterval:2.0f];
     
     if([[[UIDevice currentDevice]systemVersion]floatValue]>=7.0)
     {

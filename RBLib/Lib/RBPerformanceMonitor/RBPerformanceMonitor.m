@@ -7,9 +7,9 @@
 //
 
 #import "RBPerformanceMonitor.h"
-#import <CrashReporter/CrashReporter.h>
 #import <QuartzCore/CADisplayLink.h>
 #import <libkern/OSAtomic.h>
+#import "RBStackDump.h"
 
 #ifdef DEBUG
 #define Report(FORMAT, ...) fprintf(stderr,"[%s:%d]\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String])
@@ -110,16 +110,8 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
                 if (activity==kCFRunLoopBeforeSources || activity==kCFRunLoopAfterWaiting) {
 //                    if (++timeoutCount < 5)
 //                        continue;
-                    PLCrashReporterConfig *config = [[PLCrashReporterConfig alloc] initWithSignalHandlerType:PLCrashReporterSignalHandlerTypeBSD
-                                                                                       symbolicationStrategy:PLCrashReporterSymbolicationStrategyAll];
-                    PLCrashReporter *crashReporter = [[PLCrashReporter alloc] initWithConfiguration:config];
-                    NSError *error = nil;
-                    NSData *data = [crashReporter generateLiveReportAndReturnError:&error];
-                    PLCrashReport *reporter = [[PLCrashReport alloc] initWithData:data error:&error];
-                    NSString *report = [PLCrashReportTextFormatter stringValueForCrashReport:reporter
-                                                                              withTextFormat:PLCrashReportTextFormatiOS];
                     
-                    Report(@"Report:\n------------\n%@\n------------\n", report);
+                    Report(@"Report:\n------------\n%@\n------------\n", [RBStackDump backtraceOfMainThread]);
                     timeoutCount = 0;
                 }
             }

@@ -12,6 +12,9 @@
 
 + (instancetype)sharedInstance;
 
-- (void)dump;
++ (NSString *)backtraceOfAllThread;
++ (NSString *)backtraceOfCurrentThread;
++ (NSString *)backtraceOfMainThread;
++ (NSString *)backtraceOfNSThread:(NSThread *)thread;
 
 @end

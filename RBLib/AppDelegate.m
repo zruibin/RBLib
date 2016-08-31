@@ -109,7 +109,7 @@ static NSInteger count = 10;
 
 - (void)dumpTimer
 {
-    [[RBStackDump sharedInstance] dump];
+//    [RBStackDump backtraceOfAllThread];
 }
 
 

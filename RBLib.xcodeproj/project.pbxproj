@@ -41,7 +41,6 @@
 		5120DA361C474D120023C163 /* SwizzlingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5120DA351C474D120023C163 /* SwizzlingController.m */; };
 		5120DA3A1C4760E40023C163 /* ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5120DA391C4760E40023C163 /* ImageEffects.m */; };
 		512EA4061C44E6C300B61DC5 /* UIImage+RBImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 512EA4051C44E6C300B61DC5 /* UIImage+RBImage.m */; };
-		51437F141C05B83900DD3F0B /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51437F111C05B83900DD3F0B /* CrashReporter.framework */; };
 		51437F151C05B83900DD3F0B /* RBPerformanceMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 51437F131C05B83900DD3F0B /* RBPerformanceMonitor.m */; };
 		519BCD2D1C084A3900B6CF8A /* UIView+Material.m in Sources */ = {isa = PBXBuildFile; fileRef = 519BCD2C1C084A3900B6CF8A /* UIView+Material.m */; };
 		51ADF6AF1C87E1F8009E0C5B /* RBRuntimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 51ADF6AE1C87E1F8009E0C5B /* RBRuntimeTests.m */; };
@@ -125,7 +124,6 @@
 		5120DA391C4760E40023C163 /* ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEffects.m; sourceTree = "<group>"; };
 		512EA4041C44E6C300B61DC5 /* UIImage+RBImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RBImage.h"; sourceTree = "<group>"; };
 		512EA4051C44E6C300B61DC5 /* UIImage+RBImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RBImage.m"; sourceTree = "<group>"; };
-		51437F111C05B83900DD3F0B /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CrashReporter.framework; sourceTree = "<group>"; };
 		51437F121C05B83900DD3F0B /* RBPerformanceMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBPerformanceMonitor.h; sourceTree = "<group>"; };
 		51437F131C05B83900DD3F0B /* RBPerformanceMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBPerformanceMonitor.m; sourceTree = "<group>"; };
 		519BCD2B1C084A3900B6CF8A /* UIView+Material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Material.h"; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 				2CDC89FB1C8AC30A00656A7F /* CoreImage.framework in Frameworks */,
 				51ADF6BB1C8830D0009E0C5B /* CoreText.framework in Frameworks */,
 				2C8474611AF7505C00194D2F /* libPods-pop.a in Frameworks */,
-				51437F141C05B83900DD3F0B /* CrashReporter.framework in Frameworks */,
 				2C8474621AF7505C00194D2F /* libPods-SDWebImage.a in Frameworks */,
 				2C8474631AF7505C00194D2F /* libPods-UIActivityIndicator-for-SDWebImage.a in Frameworks */,
 				2C8474641AF7505C00194D2F /* libPods-UIDevice-SupportedDevices.a in Frameworks */,
@@ -369,7 +366,6 @@
 		51437F101C05B83900DD3F0B /* RBPerformanceMonitor */ = {
 			isa = PBXGroup;
 			children = (
-				51437F111C05B83900DD3F0B /* CrashReporter.framework */,
 				51437F121C05B83900DD3F0B /* RBPerformanceMonitor.h */,
 				51437F131C05B83900DD3F0B /* RBPerformanceMonitor.m */,
 				E088EBCD1D7021C200346E38 /* RBStackDump.h */,
