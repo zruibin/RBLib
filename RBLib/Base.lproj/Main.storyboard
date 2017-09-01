@@ -117,10 +117,6 @@
                                     <action selector="testProtocolAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5ll-u5-ODr"/>
                                 </connections>
                             </button>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G92-Mc-EYP">
-                                <rect key="frame" x="36" y="416" width="303" height="241"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </webView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -130,15 +126,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="tNX-Ed-RgY" secondAttribute="trailing" constant="10" id="IaB-gQ-PrE"/>
                             <constraint firstItem="90A-Ng-bLW" firstAttribute="top" secondItem="9fq-z5-GCK" secondAttribute="top" id="Mam-dy-NHl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g6p-bN-aXX" secondAttribute="trailing" constant="50" id="O2L-of-Z1v"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="G92-Mc-EYP" secondAttribute="trailing" constant="20" id="OMr-U7-asK"/>
-                            <constraint firstItem="G92-Mc-EYP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="PVS-Tf-EaL"/>
                             <constraint firstItem="90A-Ng-bLW" firstAttribute="top" secondItem="g6p-bN-aXX" secondAttribute="bottom" constant="30" id="Xl9-OC-sRY"/>
-                            <constraint firstItem="G92-Mc-EYP" firstAttribute="top" secondItem="hjB-u7-Q06" secondAttribute="bottom" constant="20" id="Y4y-VM-YRA"/>
                             <constraint firstItem="iLV-Rc-ABr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="ZL2-8E-IOQ"/>
                             <constraint firstItem="IMq-Qi-Olq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="ZRn-av-NR0"/>
                             <constraint firstItem="iLV-Rc-ABr" firstAttribute="top" secondItem="g6p-bN-aXX" secondAttribute="bottom" constant="80" id="cM6-H3-uyx"/>
                             <constraint firstItem="IMq-Qi-Olq" firstAttribute="top" secondItem="tNX-Ed-RgY" secondAttribute="bottom" constant="8" id="eQ7-59-VYK"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="G92-Mc-EYP" secondAttribute="bottom" constant="10" id="f4m-nR-aSj"/>
                             <constraint firstItem="tNX-Ed-RgY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="gWX-TQ-ZFQ"/>
                             <constraint firstItem="tNX-Ed-RgY" firstAttribute="top" secondItem="iLV-Rc-ABr" secondAttribute="bottom" constant="8" id="grY-45-Pbc"/>
                             <constraint firstItem="9fq-z5-GCK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="90A-Ng-bLW" secondAttribute="trailing" constant="40" id="hdc-A0-1pb"/>
@@ -167,7 +159,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="popAnimation" destination="g6p-bN-aXX" id="0CU-Xe-BuT"/>
-                        <outlet property="webView" destination="G92-Mc-EYP" id="KLT-jy-kVU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

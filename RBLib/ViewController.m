@@ -20,11 +20,12 @@
 
 #import "TransitionAnimator.h"
 
+#import "RBURLProtocol.h"
+
 
 @interface ViewController () <UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet APRoundButton *popAnimation;
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
@@ -75,13 +76,17 @@
 {
     DLog(@"test Protocol....");
     
-    [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://baidu.com"]]];
-//    NSURLSessionConfiguration *configure = [NSURLSessionConfiguration defaultSessionConfiguration];
-//    NSURLSession *session = [NSURLSession sessionWithConfiguration:configure];
-//    NSURLSessionTask *task = [session dataTaskWithURL:[NSURL URLWithString:@"http://baidu.com"] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//        DLog(@"response: %@", response);
-//    }];
-//    [task resume];
+    NSURLSessionConfiguration *configure = [NSURLSessionConfiguration defaultSessionConfiguration];
+    //MARK:
+    /*
+     对于NSURLSession的请求，注册NSURLProtocol的方式稍有不同，是通过NSURLSessionConfiguration注册的
+     */
+    configure.protocolClasses = @[[RBURLProtocol class]];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configure];
+    NSURLSessionTask *task = [session dataTaskWithURL:[NSURL URLWithString:@"http://baidu.com"] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        DLog(@"response: %@", response);
+    }];
+    [task resume];
 }
 
 

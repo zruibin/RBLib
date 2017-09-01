@@ -47,7 +47,8 @@ static NSInteger count = 10;
     
     [UIImage initialize];
 //    [[RBPerformanceMonitor sharedInstance] start];
-    [NSURLProtocol registerClass:[RBURLProtocol class]];
+//    [NSURLProtocol registerClass:[RBURLProtocol class]];
+    
     return YES;
 }
 
