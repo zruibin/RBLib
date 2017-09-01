@@ -9,11 +9,12 @@
 #import "RBURLProtocol.h"
 #import "RBMacros.h"
 
-static NSString * const URLProtocolHandledKey = @"URLProtocolHandledKey";
+static NSString * const RBURLProtocolHandledKey = @"RBURLProtocolHandledKey";
 
-@interface RBURLProtocol () <NSURLConnectionDelegate, NSURLConnectionDataDelegate>
+@interface RBURLProtocol () <NSURLSessionDelegate>
 
-@property (nonatomic, strong) NSURLConnection *connection;
+@property (atomic, strong, readwrite) NSURLSessionDataTask *task;
+@property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic, strong) NSDate  *startDate;
 
 @end
@@ -28,7 +29,7 @@ static NSString * const URLProtocolHandledKey = @"URLProtocolHandledKey";
           [scheme caseInsensitiveCompare:@"https"] == NSOrderedSame))
     {
         //看看是否已经处理过了，防止无限循环
-        if ([NSURLProtocol propertyForKey:URLProtocolHandledKey inRequest:request]) {
+        if ([NSURLProtocol propertyForKey:RBURLProtocolHandledKey inRequest:request]) {
             return NO;
         }
         
@@ -39,8 +40,8 @@ static NSString * const URLProtocolHandledKey = @"URLProtocolHandledKey";
 
 + (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request
 {
+    /** 可以在此处添加头等信息  */
     NSMutableURLRequest *mutableReqeust = [request mutableCopy];
-    //    [NSURLProtocol setProperty:@YES forKey:myProtocolKey inRequest:mutableReqeust];
     return [mutableReqeust copy];
 }
 
@@ -51,65 +52,115 @@ static NSString * const URLProtocolHandledKey = @"URLProtocolHandledKey";
     NSMutableURLRequest *mutableReqeust = [[self request] mutableCopy];
     
     //打标签，防止无限循环
-    [NSURLProtocol setProperty:@YES forKey:URLProtocolHandledKey inRequest:mutableReqeust];
+    [NSURLProtocol setProperty:@YES forKey:RBURLProtocolHandledKey inRequest:mutableReqeust];
     
-    self.connection = [NSURLConnection connectionWithRequest:mutableReqeust delegate:self];
-    self.startDate = [NSDate date];
+    NSURLSessionConfiguration *configure = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
+    self.session  = [NSURLSession sessionWithConfiguration:configure delegate:self delegateQueue:queue];
+    self.task = [self.session dataTaskWithRequest:mutableReqeust];
+    [self.task resume];
 }
 
 - (void)stopLoading
 {
-    [self.connection cancel];
+    [self.session invalidateAndCancel];
+    self.session = nil;
     DLog(@"RBURLProtocol__stopLoading");
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
     NSString *duration = [NSString stringWithFormat:@"%fs",[[NSDate date] timeIntervalSince1970] - [self.startDate timeIntervalSince1970]];
-    DLog(@"NSURLConnection duartion:%@", duration);
+    DLog(@"NSURLSession duartion:%@", duration);
 }
 
-#pragma mark - NSURLConnectionDelegate
+#pragma mark - NSURLSessionDelegate
 
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
 {
-    [[self client] URLProtocol:self didFailWithError:error];
+    if (error != nil) {
+        [self.client URLProtocol:self didFailWithError:error];
+    } else {
+        [self.client URLProtocolDidFinishLoading:self];
+    }
 }
 
-- (BOOL)connectionShouldUseCredentialStorage:(NSURLConnection *)connection
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response
+            completionHandler:(void (^)(NSURLSessionResponseDisposition disposition))completionHandler
 {
-    return YES;
+    [self.client URLProtocol:self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageNotAllowed];
+    
+    completionHandler(NSURLSessionResponseAllow);
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data
 {
-    [[self client] URLProtocol:self didReceiveAuthenticationChallenge:challenge];
+    [self.client URLProtocol:self didLoadData:data];
 }
 
-- (void)connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+- (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask willCacheResponse:(NSCachedURLResponse *)proposedResponse completionHandler:(void (^)(NSCachedURLResponse * _Nullable))completionHandler
 {
-    [[self client] URLProtocol:self didCancelAuthenticationChallenge:challenge];
+    completionHandler(proposedResponse);
 }
 
-#pragma mark - NSURLConnectionDataDelegate
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+//TODO: 重定向
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task willPerformHTTPRedirection:(NSHTTPURLResponse *)response newRequest:(NSURLRequest *)newRequest completionHandler:(void (^)(NSURLRequest *))completionHandler
 {
-    [[self client] URLProtocol:self didReceiveResponse:response cacheStoragePolicy:NSURLCacheStorageAllowed];
+    NSMutableURLRequest *redirectRequest= [newRequest mutableCopy];
+    [[self class] removePropertyForKey:RBURLProtocolHandledKey inRequest:redirectRequest];
+    [[self client] URLProtocol:self wasRedirectedToRequest:redirectRequest redirectResponse:response];
+    
+    [self.task cancel];
+    [[self client] URLProtocol:self didFailWithError:[NSError errorWithDomain:NSCocoaErrorDomain code:NSUserCancelledError userInfo:nil]];
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+- (instancetype)initWithRequest:(NSURLRequest *)request cachedResponse:(NSCachedURLResponse *)cachedResponse client:(id<NSURLProtocolClient>)client
 {
-    [[self client] URLProtocol:self didLoadData:data];
+    
+    NSMutableURLRequest*    redirectRequest;
+    redirectRequest = [request mutableCopy];
+    
+    //添加认证信息
+//    NSString *authString = [[[NSString stringWithFormat:@"%@:%@", kGlobal.userInfo.sAccount, kGlobal.userInfo.sPassword] dataUsingEncoding:NSUTF8StringEncoding] base64EncodedString];
+//    authString = [NSString stringWithFormat: @"Basic %@", authString];
+//    [redirectRequest setValue:authString forHTTPHeaderField:@"Authorization"];
+    DLog(@"拦截的请求:%@",request.URL.absoluteString);
+    
+    self = [super initWithRequest:redirectRequest cachedResponse:cachedResponse client:client];
+    if (self) {
+        
+        // Some stuff
+    }
+    return self;
 }
 
-- (NSCachedURLResponse *)connection:(NSURLConnection *)connection willCacheResponse:(NSCachedURLResponse *)cachedResponse
-{
-    return cachedResponse;
-}
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    [[self client] URLProtocolDidFinishLoading:self];
+/*
+- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler{
+    
+    DLog(@"自定义Protocol开始认证...");
+    NSString *authMethod = [[challenge protectionSpace] authenticationMethod];
+    DLog(@"%@认证...",authMethod);
+    
+    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
+        NSURLCredential *card = [[NSURLCredential alloc] initWithTrust:challenge.protectionSpace.serverTrust];
+        completionHandler(NSURLSessionAuthChallengeUseCredential,card);
+    }
+    
+    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodNTLM]) {
+        if ([challenge previousFailureCount] == 0) {
+            NSURLCredential *credential = [NSURLCredential credentialWithUser:kGlobal.userInfo.sAccount password:kGlobal.userInfo.sPassword persistence:NSURLCredentialPersistenceForSession];
+            [[challenge sender] useCredential:credential forAuthenticationChallenge:challenge];
+            completionHandler(NSURLSessionAuthChallengeUseCredential,credential);
+        }else{
+            completionHandler(NSURLSessionAuthChallengeCancelAuthenticationChallenge,nil);
+        }
+    }
+    
+    DLog(@"自定义Protocol认证结束");
 }
+//*/
+
 
 @end

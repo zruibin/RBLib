@@ -24,6 +24,7 @@
 @interface ViewController () <UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet APRoundButton *popAnimation;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
@@ -69,6 +70,20 @@
     
     [self myLog:@"312",@"321", nil];//必须有nil
 }
+
+- (IBAction)testProtocolAction:(id)sender
+{
+    DLog(@"test Protocol....");
+    
+    [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://baidu.com"]]];
+//    NSURLSessionConfiguration *configure = [NSURLSessionConfiguration defaultSessionConfiguration];
+//    NSURLSession *session = [NSURLSession sessionWithConfiguration:configure];
+//    NSURLSessionTask *task = [session dataTaskWithURL:[NSURL URLWithString:@"http://baidu.com"] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//        DLog(@"response: %@", response);
+//    }];
+//    [task resume];
+}
+
 
 #pragma mark -- Object-C中编写省略参数的多参函数
 
